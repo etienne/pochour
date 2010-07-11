@@ -9,14 +9,14 @@ Given /^I have one\s+user "([^\"]*)" with email "([^\"]*)" and password "([^\"]*
            :password_confirmation => password).save!
 end
 
-Given /^I am a new, authenticated user$/ do
+Given /^I am a new, logged in user$/ do
   email = 'john@example.com'
   name = 'John Example'
   password = 'tropcool'
 
-  Given %{I have one user "#{email}" with password "#{password}" and name "#{name}"}
-  And %{I go to login}
+  Given %{I have one user "#{name}" with email "#{email}" and password "#{password}"}
+  And %{I go to the home page}
   And %{I fill in "user_email" with "#{email}"}
   And %{I fill in "user_password" with "#{password}"}
-  And %{I press "Sign in"}
+  And %{I press "Connexion"}
 end

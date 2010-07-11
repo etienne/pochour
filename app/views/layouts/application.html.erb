@@ -11,10 +11,6 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<% unless user_signed_in? %>
-  <%= link_to 'Créer un compte', new_user_registration_path %>
-<% end %>
-
 <%= yield %>
 
 </body>

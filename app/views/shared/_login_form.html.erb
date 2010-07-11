@@ -1,0 +1,17 @@
+<%= form_for(:user, :url => user_session_path) do |f| %>
+  <p><%= f.label :email, "Courriel" %><br />
+  <%= f.text_field :email %></p>
+
+  <p><%= f.label :password, "Mot de passe" %><br />
+  <%= f.password_field :password %></p>
+
+  <p><%= f.check_box :remember_me %> <%= f.label :remember_me, "Se souvenir de moi" %></p>
+
+  <p><%= f.submit "Connexion" %></p>
+
+  <ul>
+    <li><%= link_to "Bout d’viande, j'ai oublié mon mot de passe", new_user_password_path %></li>
+    <li><%= link_to "Créer un compte", new_user_registration_path %></li>
+  </ul>
+  
+<% end %>
