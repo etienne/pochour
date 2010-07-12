@@ -14,9 +14,8 @@ Feature: Manage login
       | user_name                  | John Whatever        |
     And I press "Devenir cool"
     Then I should be on to the home page
-    And I should not see "Créer un compte"
     And I should see "Bravo."
-    And I should see "Salut John Whatever"
+    And I should be logged in as "John Whatever"
   
   Scenario: User logs out
     Given I am a new, logged in user
@@ -27,14 +26,13 @@ Feature: Manage login
     And I should see "Créer un compte"
   
   Scenario: User logs in
-    Given I have one user "Steve Fields" with email "steve@fields.com" and password "voujvou"
+    Given I am not logged in
+    And I have one user "Steve Fields" with email "steve@fields.com" and password "voujvou"
     When I go to the home page
     And I fill in the following:
       | user_email    | steve@fields.com |
       | user_password | voujvou          |
-    And I press "Connexion"
+    And I press "Connectation"
     Then I should be on the home page
-    And I should not see "Créer un compte"
     And I should see "Salut."
-    And I should see "Salut Steve Fields"
-    
+    And I should be logged in as "Steve Fields"

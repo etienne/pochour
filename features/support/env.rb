@@ -25,6 +25,9 @@ Spork.prefork do
   # order to ease the transition to Capybara we set the default here. If you'd
   # prefer to use XPath just remove this line and adjust any selectors in your
   # steps to use the XPath syntax.
+
+  require "#{Rails.root}/test/factories"
+
   Capybara.default_selector = :css
 
 end

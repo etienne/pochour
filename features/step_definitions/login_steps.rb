@@ -3,20 +3,22 @@ Given /^I am not logged in$/ do
 end
 
 Given /^I have one\s+user "([^\"]*)" with email "([^\"]*)" and password "([^\"]*)"$/ do |name, email, password|
-  User.new(:email => email,
-           :name => name,
-           :password => password,
-           :password_confirmation => password).save!
+  Factory(:user, {
+    :email => email,
+    :name => name,
+    :password => password})
 end
 
 Given /^I am a new, logged in user$/ do
-  email = 'john@example.com'
-  name = 'John Example'
-  password = 'tropcool'
-
-  Given %{I have one user "#{name}" with email "#{email}" and password "#{password}"}
-  And %{I go to the home page}
-  And %{I fill in "user_email" with "#{email}"}
-  And %{I fill in "user_password" with "#{password}"}
-  And %{I press "Connexion"}
+  user = Factory(:user)
+  Given %{I go to the home page}
+  And %{I fill in "user_email" with "#{user.email}"}
+  And %{I fill in "user_password" with "#{user.password}"}
+  And %{I press "Connectation"}
 end
+
+Then /^I should be logged in as "([^\"]*)"$/ do |name|
+  Then %{I should not see "Créer un compte"}
+  And %{I should see "Salut #{name}"}
+end
+
