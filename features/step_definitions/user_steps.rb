@@ -1,8 +1,13 @@
-Given /^I am logged in as an administrator$/ do
-  admin = Factory(:admin)
+Given /^I am logged in as an? (.*)$/ do |role|
+  case role
+  when "administrator"
+    user = Factory(:admin)
+  when "user"
+    user = Factory(:user)
+  end
   Given %{I go to the home page}
-  And %{I fill in "user_email" with "#{admin.email}"}
-  And %{I fill in "user_password" with "#{admin.password}"}
+  And %{I fill in "user_email" with "#{user.email}"}
+  And %{I fill in "user_password" with "#{user.password}"}
   And %{I press "Connectation"}
 end
 

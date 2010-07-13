@@ -3,17 +3,24 @@ Feature: Manage users
   As an administrator
   I want to be able to create, edit and delete users
   
-  Scenario: Show list of users
-    Given I am logged in as an administrator
+  Scenario Outline: Show or hide list of users
+    Given I am <user>
     And I have the following user records:
       | name                   | email               | password  |
       | Herman Toothrot        | herman@toothrot.net | whatpants |
       | Throatwobbler Mangrove | mangrove@wobble.com | yoyoyo    |
       | Raymond Luxury Yacht   | ray@luxyacht.com    | tropcrazy |
     When I go to the users page
-    Then I should see "Herman Toothrot"
-    And I should see "Throatwobbler Mangrove"
-    And I should see "Raymond Luxury Yacht"
+    Then I should <action> "Herman Toothrot"
+    And I should <action> "Throatwobbler Mangrove"
+    And I should <action> "Raymond Luxury Yacht"
   
+  Examples:
+    | user                          | action  |
+    | logged in as an administrator | see     |
+    | logged in as a user           | not see |
+    | not logged in                 | not see |
 
+
+  
   
