@@ -1,8 +1,30 @@
+<header>
+  pochour.com
+</header>
+<sidebar class="left">
 <% if user_signed_in? %>
   Salut <strong><%= current_user.name %></strong>.
-  <ul>
-    <li><%= link_to 'Déconnexion', destroy_user_session_path %></li>
-  </ul>
+  <nav>
+    <ul>
+      <li><%= link_to "Publier un nouvel article", new_article_path %></li>
+      <li><%= link_to 'Déconnectation', destroy_user_session_path %></li>
+    </ul>
+  </nav>
 <% else %>
   <%= render :partial => 'shared/login_form'%>
 <% end %>
+</sidebar>
+<section>
+  <% unless @articles.empty? %>
+    <% @articles.each do |article| %>
+    <article>
+      <h1><%= article.title %></h1>
+      <details>par <%= article.user.name %> – <%= publication_date article.created_at %></details>
+      <div class="date">Publié le </div>
+      <div class="body">
+      
+      </div>
+    </article>
+    <% end %>
+  <% end %>
+</section>

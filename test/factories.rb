@@ -11,3 +11,8 @@ Factory.define :admin, :class => User do |a|
   a.password 'jesusjesus'
   a.admin true
 end
+
+Factory.define :article do |a|
+  a.title "Trop malade ton titre"
+  a.article "Fucké raide là"
+end

@@ -1,0 +1,24 @@
+body {
+  font: 14px/21px Georgia, "Droid Serif", serif;
+  color: #27292B;
+  padding: 14px;
+}
+
+header {
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0 0 60px 234px;
+}
+
+section {
+  margin-left: 234px;
+}
+
+sidebar {
+  width: 220px;
+  margin-right: 14px;
+  float: left;
+  font-size: 12px;
+  line-height: 18px;
+}
