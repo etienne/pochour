@@ -6,7 +6,7 @@ Feature: Manage login
   Scenario: User creates a new account
     Given I am not logged in
     When I go to the home page
-    And I follow "Créer un compte"
+    And I follow "Inscrivez-vous"
     And I fill in the following:
       | user_email                 | whatever@example.com |
       | user_password              | whatever             |
@@ -20,10 +20,10 @@ Feature: Manage login
   Scenario: User logs out
     Given I am a new, logged in user
     When I go to the home page
-    And I follow "Déconnexion"
+    And I follow "Déconnectation"
     Then I should be on the home page
     And I should see "Ciao."
-    And I should see "Créer un compte"
+    And I should see "Ça faut un compte pour écrire un article."
   
   Scenario: User logs in
     Given I am not logged in

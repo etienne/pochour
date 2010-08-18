@@ -1,9 +1,13 @@
 Pochour::Application.routes.draw do |map|
   root :to => "home#index"
-
-  devise_for :users
+  
+  devise_for :users do
+    get "deconnectation", :to => "devise/sessions#destroy"
+  end
   
   resources :users, :only => [:index, :edit]
+  
+  resources :articles
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

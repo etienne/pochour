@@ -11,7 +11,7 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
     when /the logout page/
-      'users/sign_out'
+      'deconnectation'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
