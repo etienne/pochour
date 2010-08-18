@@ -109,6 +109,12 @@ fr:
       two_words_connector: " et "
       last_word_connector: " et "
   
+  helpers:
+    submit:
+      article:
+        create: "Publier"
+        update: "Modifier"
+            
   activerecord:
     errors:
       template:

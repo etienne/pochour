@@ -6,12 +6,23 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
+<body class="<%= controller_name %>">
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<header>
+  <%= yield :header %>
+</header>
 
-<%= yield %>
+<%= link_to "accueil", root_path, :id => "home_link" %>
+
+<%= yield :before_content %>
+
+<section>
+  <div class="notice"><%= notice %></div>
+  <div class="alert"><%= alert %></div>
+  <%= yield  %>
+</section>
+
+<%= yield :after_content %>
 
 </body>
 </html>

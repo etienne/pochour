@@ -1,5 +1,9 @@
-<h1><%= @article.title %></h1>
-
-<div class="author">par <%= @article.user.name %></div>
-
-<%= @article.article %>
+<article>
+  <header>
+    <h1><%= @article.title %></h1>
+    <div class="author">par <%= @article.user.name %></div>
+  </header>
+  <%= @article.article %>
+  
+  <%= link_to "Modifier cet article", edit_article_url(@article) %>
+</article>

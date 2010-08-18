@@ -4,11 +4,21 @@ body {
   padding: 14px;
 }
 
+body > header {
+  margin: 0 0 60px 234px;
+}
+
+body.home a#home_link {
+  display: none;
+}
+
 header {
   font-family: "Helvetica Neue";
+}
+
+header h1 {
   font-weight: bold;
   font-size: 30px;
-  margin: 0 0 60px 234px;
 }
 
 section {
