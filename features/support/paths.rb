@@ -12,7 +12,9 @@ module NavigationHelpers
       '/'
     when /the logout page/
       'deconnectation'
-
+    when /^the article page "([^"]*)"$/
+      article_path(Article.find_by_title($1))
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

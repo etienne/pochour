@@ -22,11 +22,11 @@ fr:
       default: "%d %B %Y %H:%M"
       time: "%H:%M"
       short: "%d %b %H:%M"
-      long: "%A %d %B %Y %H:%M:%S %Z"
+      long: "%Y.%m.%d %H:%M %p"
       long_ordinal: "%A %d %B %Y %H:%M:%S %Z"
       only_second: "%S"
-    am: 'am'
-    pm: 'pm'
+    am: 'AM'
+    pm: 'PM'
 
   datetime:
     distance_in_words:
@@ -114,6 +114,8 @@ fr:
       article:
         create: "Publier"
         update: "Modifier"
+      comment:
+        create: "Publier"
             
   activerecord:
     errors:

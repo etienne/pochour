@@ -8,5 +8,28 @@
   <% if can? :update, @article -%>
   <%= link_to "Modifier cet article", edit_article_url(@article) %>
   <% end -%>
-  
 </article>
+
+<section class="comments">
+  <h1>Commentations</h1>
+  <% if @article.comments.blank? -%>
+  <p>Aucune commentation n’a encore été écrite.</p>
+  <% else -%>
+  <dl class="comments">
+    <% @article.comments.each do |comment| -%>
+    <dt>
+      <% if user = comment.user -%>
+        <%= user.name %>
+      <% elsif !comment.author.blank? -%>
+        <%= comment.author %>
+      <% else -%>
+        Visiteur stupide et anonyme
+      <% end -%>
+      – <%= publication_date_and_time(comment.created_at) %>
+    </dt>
+    <dd><%= comment.comment %></dd>
+    <% end -%>
+  </dl>
+  <% end -%>
+  <%= render 'comment_form' %>
+</section>

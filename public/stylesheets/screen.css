@@ -21,7 +21,7 @@ header h1 {
   font-size: 30px;
 }
 
-section {
+body > section {
   margin-left: 234px;
 }
 
