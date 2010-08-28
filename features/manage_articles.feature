@@ -4,7 +4,7 @@ Feature: Manage articles
   I want to be able to create and edit articles
   
   Scenario: User looks at the list of articles on the home page and follows a link
-    Given I have the following article records:
+    Given there are the following article records:
       | title                                         | article            |
       | Des grosses patates chaudes                   | Malade ton article |
       | De l’impossibilité de la grosse patate chaude | Fucké tes affaires |
@@ -30,9 +30,9 @@ Feature: Manage articles
     And I should see "Roger McMuffin"
     And I should see "Bravo."
   
-  Scenario: User creates an article and edits it
+  Scenario: User edits an article
     Given I am logged in as "Arthur Steveson"
-    And I have an article titled "Bouettisme" with author "Arthur Steveson"
+    And there is an article titled "Bouettisme" with author "Arthur Steveson"
     And I am on the home page
     And I follow "Bouettisme"
     When I follow "Modifier cet article"
@@ -44,3 +44,10 @@ Feature: Manage articles
     And I should not see "Bouettisme"
     And I should see "C’est trop fucké là"
     And I should see "Bravo."
+  
+  Scenario: User tries to edit an article which they didn't create
+    Given I am logged in as "Klingon Nowhereson"
+    And there is an article titled "Bouettisme"
+    And I am on the home page
+    When I follow "Bouettisme"
+    Then I should not see "Modifier cet article"

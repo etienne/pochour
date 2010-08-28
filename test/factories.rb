@@ -1,16 +1,20 @@
+Factory.sequence :name do |n|
+  "Steve Fields #{n}"
+end
+
 Factory.sequence :email do |n|
   "roger#{n}@example.com"
 end
 
 Factory.define :user do |u|
-  u.name 'Steve Fields'
+  u.name { Factory.next(:name) }
   u.email { Factory.next(:email) }
   u.password 'fieldsfields'
   u.admin false
 end
 
 Factory.define :admin, :class => User do |a|
-  a.name 'Jésus'
+  a.name { Factory.next(:name) }
   a.email { Factory.next(:email) }
   a.password 'jesusjesus'
   a.admin true

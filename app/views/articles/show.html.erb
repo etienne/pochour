@@ -5,5 +5,8 @@
   </header>
   <%= @article.article %>
   
+  <% if can? :update, @article -%>
   <%= link_to "Modifier cet article", edit_article_url(@article) %>
+  <% end -%>
+  
 </article>

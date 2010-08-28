@@ -5,7 +5,7 @@ Feature: Manage users
   
   Scenario Outline: Show or hide list of users
     Given I am <user>
-    And I have the following user records:
+    And there are the following user records:
       | name                   | email               | password  |
       | Herman Toothrot        | herman@toothrot.net | whatpants |
       | Throatwobbler Mangrove | mangrove@wobble.com | yoyoyo    |
