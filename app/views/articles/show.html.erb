@@ -6,7 +6,7 @@
   <%= @article.article %>
   
   <% if can? :update, @article -%>
-  <%= link_to "Modifier cet article", edit_article_url(@article) %>
+  <%= link_to "Modifier cet article", edit_user_article_url(@article.user, @article) %>
   <% end -%>
 </article>
 

@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     
     if @article.save
-      redirect_to(@article, :notice => 'Bravo.')
+      redirect_to(user_article_path(@article.user, @article), :notice => 'Bravo.')
     else
       render :action => "new"
     end
@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update_attributes(params[:article])
-      redirect_to(@article, :notice => 'Bravo.')
+      redirect_to(user_article_path(@article.user, @article), :notice => 'Bravo.')
     else
       render :action => "edit"
     end

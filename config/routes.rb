@@ -1,14 +1,32 @@
-Pochour::Application.routes.draw do |map|
+Pochour::Application.routes.draw do
   root :to => "home#index"
   
-  devise_for :users do
-    get "deconnectation", :to => "devise/sessions#destroy"
+  scope(:path_names => { :new => "nouveau", :edit => "modifier" }) do
+    devise_for :users, :path => "compte", :path_names => { :sign_in => 'connectation',
+                                                           :sign_out => 'deconnectation',
+                                                           :password => 'mot-de-passe',
+                                                           :confirmation => 'confirmation',
+                                                           :unlock => 'debloquer',
+                                                           :registration => 'enregistrer',
+                                                           :sign_up => 'inscription' }
+  
+    # resources :users, :only => [:index, :edit]
+    
+    # resources :users, :path => "gens" do
+    #   resources :articles do
+    #     resources :comments
+    #   end
+    # end
+
+    get "publier" => 'articles#new', :as => :new_article
+    post "publier" => 'articles#create', :as => :articles
+    get ":user_id" => 'users#show', :as => :users
+    get ":user_id/:id" => 'articles#show', :as => :user_article
+    put ":user_id/:id" => 'articles#update', :as => :user_article
+    get ":user_id/:id/modifier" => 'articles#edit', :as => :edit_user_article
+    post ":user_id/:article_id/commentation" => 'comments#create', :as => :user_article_comments
   end
   
-  resources :users, :only => [:index, :edit]
-  resources :articles do
-    resources :comments
-  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

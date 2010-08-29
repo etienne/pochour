@@ -7,6 +7,6 @@ class CommentsController < ApplicationController
       comment[:author] = nil
     end
     @comment = @article.comments.create(comment)
-    redirect_to @article
+    redirect_to user_article_path(@article.user, @article)
   end
 end

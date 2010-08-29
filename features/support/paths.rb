@@ -11,9 +11,10 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
     when /the logout page/
-      'deconnectation'
+      destroy_user_session_path
     when /^the article page "([^"]*)"$/
-      article_path(Article.find_by_title($1))
+      article = Article.find_by_title($1)
+      user_article_path(article.user, article)
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :name
   
   has_many :articles
+  
+  has_friendly_id :name, :use_slug => true, :approximate_ascii => true, :reserved_words => ["ecrire", "compte"]
+  
 end
