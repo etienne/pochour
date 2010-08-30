@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100829001632) do
+ActiveRecord::Schema.define(:version => 20100830001807) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -25,6 +25,22 @@ ActiveRecord::Schema.define(:version => 20100829001632) do
     t.text     "comment"
     t.integer  "article_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "epithet_votes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.integer  "epithet_id"
+    t.boolean  "vote"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "epithets", :force => true do |t|
+    t.string   "name"
+    t.boolean  "valid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
