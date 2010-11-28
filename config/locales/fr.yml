@@ -116,7 +116,9 @@ fr:
         update: "Modifier"
       comment:
         create: "Publier"
-            
+      epithet:
+        create: "Procéder"
+
   activerecord:
     errors:
       template:

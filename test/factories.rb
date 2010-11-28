@@ -25,3 +25,8 @@ Factory.define :article do |a|
   a.article "Fucké raide là"
   a.association :user
 end
+
+Factory.define :epithet do |e|
+  e.name "fucked up"
+  e.approved true
+end

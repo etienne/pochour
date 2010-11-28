@@ -1,8 +1,7 @@
 class Article < ActiveRecord::Base
   belongs_to :user
   has_many :comments
-  has_many :epithet_votes
-  has_many :epithets, :through => :epithet_votes
+  has_and_belongs_to_many :epithets
   
   validates_presence_of :title, :article
   

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100830001807) do
+ActiveRecord::Schema.define(:version => 20100830041759) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(:version => 20100830001807) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "articles_epithets", :id => false, :force => true do |t|
+    t.integer "article_id"
+    t.integer "epithet_id"
   end
 
   create_table "comments", :force => true do |t|
@@ -31,7 +36,6 @@ ActiveRecord::Schema.define(:version => 20100830001807) do
 
   create_table "epithet_votes", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "article_id"
     t.integer  "epithet_id"
     t.boolean  "vote"
     t.datetime "created_at"
@@ -40,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20100830001807) do
 
   create_table "epithets", :force => true do |t|
     t.string   "name"
-    t.boolean  "valid"
+    t.boolean  "approved"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

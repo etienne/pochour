@@ -3,8 +3,11 @@ class Ability
   
   def initialize(user)  
     can :read, :all
-    can :update, Article do |article|
-      article.user == user
+    unless user.nil?
+      can :create, [Article, Epithet]
+      can :update, Article do |article|
+        article.user == user
+      end
     end
   end  
 end

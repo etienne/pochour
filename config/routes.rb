@@ -25,6 +25,7 @@ Pochour::Application.routes.draw do
     put ":user_id/:id" => 'articles#update', :as => :user_article
     get ":user_id/:id/modifier" => 'articles#edit', :as => :edit_user_article
     post ":user_id/:article_id/commentation" => 'comments#create', :as => :user_article_comments
+    post ":user_id/:article_id/epithete" => 'epithets#create', :as => :user_article_epithets
   end
   
   

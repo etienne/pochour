@@ -1,0 +1,2 @@
+module EpithetsHelper
+end
