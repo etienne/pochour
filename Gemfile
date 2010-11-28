@@ -9,6 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem "cancan"
 gem "friendly_id", "~> 3.1"
+gem "simple_form"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -28,7 +29,7 @@ gem "friendly_id", "~> 3.1"
 # Bundle gems for certain environments:
 group :test do
   gem "shoulda"
-  gem 'capybara'
+  gem 'capybara', "0.3.9"
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
