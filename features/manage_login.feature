@@ -18,7 +18,7 @@ Feature: Manage login
     And I should be logged in as "John Whatever"
   
   Scenario: User logs out
-    Given I am a new, logged in user
+    Given I am logged in
     When I go to the home page
     And I follow "Déconnectation"
     Then I should be on the home page

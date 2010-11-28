@@ -1,8 +1,3 @@
-Given /^I am not logged in$/ do
-  Given "I go to the logout page"
-  Then %{I should see "Ça faut un compte pour écrire un article."}
-end
-
 Given /^I have one\s+user "([^\"]*)" with email "([^\"]*)" and password "([^\"]*)"$/ do |name, email, password|
   Factory(:user, {
     :email => email,
@@ -10,9 +5,14 @@ Given /^I have one\s+user "([^\"]*)" with email "([^\"]*)" and password "([^\"]*
     :password => password})
 end
 
-Given /^I am a new, logged in user$/ do
+Given /^I am logged in$/ do
   user = Factory(:user)
   Given %{I log in with email "#{user.email}" and password "#{user.password}"}
+end
+
+Given /^I am not logged in$/ do
+  Given "I go to the logout page"
+  Then %{I should see "Ça faut un compte pour écrire un article."}
 end
 
 Given /^I am logged in as an? (.*)$/ do |role|
