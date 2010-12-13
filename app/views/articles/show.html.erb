@@ -51,7 +51,7 @@
       <% else -%>
         Visiteur stupide et anonyme
       <% end -%>
-      – <%= publication_date_and_time(comment.created_at) %>
+      – <%= date_and_time_tag(comment.created_at) %>
     </dt>
     <dd><%= comment.comment %></dd>
     <% end -%>

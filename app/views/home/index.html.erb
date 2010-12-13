@@ -22,7 +22,7 @@
   <% @articles.each do |article| %>
   <article>
     <h1><%= link_to article.title, user_article_path(article.user, article) %></h1>
-    <details>par <%= article.user.name %> – <%= publication_date article.created_at %></details>
+    <details>par <%= article.user.name %> – <%= date_tag article.created_at %></details>
     <div class="body">
     </div>
   </article>
