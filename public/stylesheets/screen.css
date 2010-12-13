@@ -1,28 +1,77 @@
 body {
   font: 14px/21px Georgia, "Droid Serif", serif;
-  color: #27292B;
-  padding: 14px;
+  color: #212428;
+  background-color: white;
+  padding: 0;
+  margin: 0;
 }
 
-body > header {
-  margin: 0 0 60px 234px;
+a {
+  color: #212428;
+  text-decoration: none;
 }
 
-body.home a#home_link {
+a:hover {
+  color: white;
+  background-color: #212428;
+}
+
+/* Helper classes */
+
+.sans, label, input[type=submit] {
+  font-family: "Titillium";
+}
+
+.light {
+  color: #707579;
+}
+
+.light a {
+  font-weight: bold;
+  color: #40464b;
+  border-bottom: 1px solid #bcbdbe;
+}
+
+.light a:hover {
+  color: white;
+}
+
+.lighter {
+  color: #95999d;
+}
+
+.clear {
+  clear: both;
+}
+
+.hidden_nojs {
   display: none;
 }
 
-header {
-  font-family: "Helvetica Neue";
+/* Grid */
+
+.pad_1 { padding-left: 248px; }
+
+.float_1, .float_2, .float_3, .float_4 {
+  float: left;
+  padding-right: 17px;
 }
 
-header h1 {
+.float_1, .wide_1 { width: 231px; }
+.float_2, .wide_2 { width: 479px; }
+.float_3, .wide_3 { width: 727px; }
+.float_4, .wide_4 { width: 975px; }
+
+/* Sitewide elements */
+
+a#home_link {
+  position: absolute;
+  top: 178px;
+  font-family: "Titillium";
   font-weight: bold;
-  font-size: 30px;
-}
-
-body > section {
-  margin-left: 234px;
+  font-size: 16px;
+  padding: 0 17px;
+  line-height: 34px;
 }
 
 sidebar {
@@ -32,3 +81,120 @@ sidebar {
   font-size: 12px;
   line-height: 18px;
 }
+
+/* Forms */
+
+form div.input {
+  margin-bottom: 8px;
+}
+
+label {
+  font-size: 14px;
+  padding: 2px 0;
+  font-weight: bold;
+  display: block;
+  color: #40464b;
+}
+
+input.string, textarea.text {
+  font: 14px/21px Georgia, "Droid Serif", serif;
+  padding: 2px;
+  border: 1px solid #D5D5D5;
+}
+
+input[type=submit] {
+  border: 0;
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 8px;
+  padding: 5px 12px;
+  font-weight: bold;
+  background-color: #40464b;
+  color: white;
+  cursor: hand;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #212428;
+}
+
+/* Article page */
+
+body.articles {
+  background-color: #f5f7f8;
+}
+
+body.articles article {
+  background-color: white;
+  padding-bottom: 30px;
+}
+
+body.articles article div.body {
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 16px;
+}
+
+body.articles article div.body p {
+  margin-bottom: 14px;
+}
+
+header.meta div.author {
+  padding-top: 20px;
+  font-size: 15px;
+}
+
+header.meta div.info {
+  border-left: 1px solid #eaebeb;
+  padding: 20px 0 17px 16px;
+  margin-left: -17px;
+}
+
+header.title {
+  padding: 63px 0 40px;
+}
+
+header.title h1 {
+  font-size: 61px;
+  line-height: 72px;
+}
+
+header.title h2 {
+  font-size: 34px;
+  font-weight: lighter;
+  line-height: 50px;
+  color: #212428;
+}
+
+section.comments {
+  padding-top: 24px;
+}
+
+section.comments h1 {
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 16px;
+}
+
+section.comments h1 span.count {
+  position: absolute;
+  left: 0;
+  width: 231px;
+  text-align: right;
+  color: #b0b5b9;
+}
+
+section.comments form {
+  margin-top: 20px;
+}
+
+section.comments input.string {
+  width: 479px;
+}
+
+section.comments textarea.text {
+  width: 479px;
+  height: 130px;
+}
+

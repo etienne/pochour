@@ -1,21 +1,45 @@
-<article>
-  <header>
-    <h1><%= @article.title %></h1>
-    <div class="author">par <%= @article.user.name %></div>
+<article class="pad_1">
+  <header class="meta sans light">
+    <div class="author float_1">par <%= link_to(@article.user.name, user_url(@article.user)) %></div>
+    <div class="info float_2">
+      considéré <a href="#">subtil</a>, <a href="#">divertissant</a>, <a href="#">transcendant</a><br>
+      publié le <%= date_tag(@article.created_at) %> (modifié le <%= date_tag(@article.updated_at) %>)
+    </div>
   </header>
-  <%= @article.article %>
+
+  <header class="title clear wide_4">
+    <h1><%= @article.display_title %></h1>
+    <% if @article.subtitle? -%>
+    <h2 class="sans"><%= @article.subtitle %></h2>
+    <% end -%>
+  </header>
+  
+  <div class="body wide_3">
+    <%= @article.article %>
+  </div>
   
   <%= link_to("Modifier cet article", edit_user_article_url(@article.user, @article)) if can? :update, @article %>
   
   <% if can? :create, Epithet -%>
   <%= render 'epithet_form' %>
   <% end %>
+  
+  <div class="bio wide_2 pad_1 lighter">
+    <%= link_to("Écrire une bio", edit_user_registration_url, :class => "hidden_nojs show_bio_form") %>
+    <div class="bio_form">
+      <%= render 'bio_form' %>
+    </div>
+  </div>
 </article>
 
-<section class="comments">
-  <h1>Commentations</h1>
+<section class="comments pad_1">
+  <h1>
+    <% if @article.comments.count > 0 %>
+    <span class="count"><%= @article.comments.count %></span>
+    <% end %>
+  commentation<%= "s" unless @article.comments.count == 1 %></h1>
   <% if @article.comments.blank? -%>
-  <p>Aucune commentation n’a encore été écrite.</p>
+  <p class="lighter">Aucune commentation n’a encore été écrite.</p>
   <% else -%>
   <dl class="comments">
     <% @article.comments.each do |comment| -%>

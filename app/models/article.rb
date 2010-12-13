@@ -6,4 +6,16 @@ class Article < ActiveRecord::Base
   validates_presence_of :title, :article
   
   has_friendly_id :title, :use_slug => true, :approximate_ascii => true, :reserved_words => ["articles"]
+  
+  def display_title
+    title.split(/\s?:\s?/, 2).first
+  end
+  
+  def subtitle
+    title.split(/\s?:\s?/, 2).second
+  end
+  
+  def subtitle?
+    !subtitle.nil?
+  end
 end
