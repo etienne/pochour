@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -34,7 +34,6 @@ group :test do
   gem 'cucumber-rails'
   gem 'cucumber'
   gem 'rspec-rails'
-  gem 'spork'
   gem 'launchy'
   gem 'factory_girl_rails'
 end
