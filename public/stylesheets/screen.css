@@ -23,7 +23,7 @@ a:hover {
 }
 
 .light {
-  color: #707579;
+  color: #858a8d;
 }
 
 .light a {
@@ -37,7 +37,7 @@ a:hover {
 }
 
 .lighter {
-  color: #95999d;
+  color: #9b9fa3;
 }
 
 .clear {
@@ -149,6 +149,7 @@ header.meta div.info {
   border-left: 1px solid #eaebeb;
   padding: 20px 0 17px 16px;
   margin-left: -17px;
+  font-size: 13px;
 }
 
 header.title {
@@ -198,3 +199,19 @@ section.comments textarea.text {
   height: 130px;
 }
 
+/* Comments */
+
+dl.comments dt {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+dl.comments dt span.user {
+  font-weight: bold;
+  color: #6d7276;
+  font-size: 15px;
+}
+
+dl.comments dd {
+  margin-bottom: 16px;
+}

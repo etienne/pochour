@@ -32,7 +32,7 @@
   </div>
 </article>
 
-<section class="comments pad_1">
+<section class="comments pad_1 wide_2">
   <h1>
     <% if @article.comments.count > 0 %>
     <span class="count"><%= @article.comments.count %></span>
@@ -43,7 +43,8 @@
   <% else -%>
   <dl class="comments">
     <% @article.comments.each do |comment| -%>
-    <dt>
+    <dt class="sans lighter">
+      <span class="user">
       <% if user = comment.user -%>
         <%= user.name %>
       <% elsif !comment.author.blank? -%>
@@ -51,6 +52,7 @@
       <% else -%>
         Visiteur stupide et anonyme
       <% end -%>
+      </span>
       – <%= date_and_time_tag(comment.created_at) %>
     </dt>
     <dd><%= comment.comment %></dd>
