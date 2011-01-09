@@ -3,7 +3,7 @@ Feature: Manage login
   As some guy who makes a weird website
   I want authors to identify themselves and hopefully publish more good stuff and less junk
 
-  Scenario: User creates a new account
+  Scenario: Visitor creates a new account
     Given I am not logged in
     When I go to the home page
     And I follow "Inscrivez-vous"
@@ -17,7 +17,7 @@ Feature: Manage login
     And I should see "Bravo."
     And I should be logged in as "John Whatever"
   
-  Scenario: User logs out
+  Scenario: Member logs out
     Given I am logged in
     When I go to the home page
     And I follow "Déconnectation"
@@ -25,7 +25,7 @@ Feature: Manage login
     And I should see "Ciao."
     And I should see "Ça faut un compte pour écrire un article."
   
-  Scenario: User logs in
+  Scenario: Member logs in
     Given I am not logged in
     And I have one user "Steve Fields" with email "steve@fields.com" and password "voujvou"
     When I go to the home page

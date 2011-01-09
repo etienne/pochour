@@ -3,7 +3,7 @@ Feature: Read articles
   As a visitor
   I want to be able to read articles
   
-  Scenario: User looks at the list of articles on the home page and follows a link
+  Scenario: Visitor looks at the list of articles on the home page and follows a link
     Given there are the following article records:
       | title                                         | article            |
       | Des grosses patates chaudes                   | Malade ton article |

@@ -1,9 +1,9 @@
 Feature: Assign epithets to articles
   In order to expressively describe content
-  As a user
+  As a member
   I want to be able to tag articles with epithets
   
-  Scenario: User assigns a new epithet to an article
+  Scenario: Member assigns a new epithet to an article
     Given I am logged in
     And there is an article titled "Bouettisme"
     And I am on the article page "Bouettisme"
@@ -14,7 +14,7 @@ Feature: Assign epithets to articles
     And I should see "Vous êtes la première personne à utiliser cet épithète."
     
   @wip
-  Scenario: User assigns an existing epithet to an article
+  Scenario: Member assigns an existing epithet to an article
     Given I am logged in
     And there is an article titled "Bouettisme"
     And there is an approved epithet called "prodigieux"
