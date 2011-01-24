@@ -1,30 +1,41 @@
-<% content_for :header do %>
-  <h1>pochour.com</h1>
-<% end %>
+<section class="home clearfix">
+  <div class="container_10">
+    <header class="grid_8 prefix_2 title">
+      <h1>Pochour.com</h1>
+      <h2 class="sans">Des affaires.</h2>
+    </header>
+    
+    <sidebar class="grid_2 push_8 sans">
+    <% if user_signed_in? %>
+      Salut <strong><%= current_user.name %></strong>.
+      <nav>
+        <ul>
+          <li><%= link_to "Publier un nouvel article", new_article_path %></li>
+          <li><%= link_to 'Déconnectation', destroy_user_session_path %></li>
+        </ul>
+      </nav>
+    <% else %>
+      <%= render :partial => 'shared/login_form'%>
+    <% end %>
+    </sidebar>
 
-<% content_for :before_content do %>
-<sidebar class="left">
-<% if user_signed_in? %>
-  Salut <strong><%= current_user.name %></strong>.
-  <nav>
-    <ul>
-      <li><%= link_to "Publier un nouvel article", new_article_path %></li>
-      <li><%= link_to 'Déconnectation', destroy_user_session_path %></li>
+    <% unless @articles.empty? %>
+    <ul class="articles">
+      <% @articles.each do |article| %>
+      <li>
+        <article>
+          <h1 class="sans"><%= link_to article.title, user_article_path(article.user, article) %></h1>
+          <div class="body light">
+            Are you ready for a poem, one heck of a poem.
+          </div>
+          <div class="meta sans light">
+            <div class="author"><%= article.user.name %></div>
+            <%= date_tag article.created_at %>
+          </div>
+        </article>
+      </li>
+      <% end %>
     </ul>
-  </nav>
-<% else %>
-  <%= render :partial => 'shared/login_form'%>
-<% end %>
-</sidebar>
-<% end %>
-
-<% unless @articles.empty? %>
-  <% @articles.each do |article| %>
-  <article>
-    <h1><%= link_to article.title, user_article_path(article.user, article) %></h1>
-    <details>par <%= article.user.name %> – <%= date_tag article.created_at %></details>
-    <div class="body">
-    </div>
-  </article>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+</section>

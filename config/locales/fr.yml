@@ -113,6 +113,8 @@ fr:
     labels:
       author: 'Nom'
       comment: 'Commentation'
+      email: 'Courriel'
+      password: 'Mot de passe'
 
   helpers:
     submit:

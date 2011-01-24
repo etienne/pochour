@@ -1,63 +1,73 @@
-<article class="pad_1">
-  <header class="meta sans light">
-    <div class="author float_1">par <%= link_to(@article.user.name, user_url(@article.user)) %></div>
-    <div class="info float_2">
-      considéré <a href="#">subtil</a>, <a href="#">divertissant</a>, <a href="#">transcendant</a><br>
-      publié le <%= date_tag(@article.created_at) %> (modifié le <%= date_tag(@article.updated_at) %>)
-    </div>
-  </header>
+<section class="article clearfix">
+  <div class="container_10">
+    <article class="grid_8 prefix_2">
+      <header class="grid_6 prefix_2 alpha omega meta sans light">
+        <div class="grid_2 alpha info">
+          publié le <%= date_tag(@article.created_at) %><br>
+          modifié le <%= date_tag(@article.updated_at) %>
+        </div>
+        <div class="grid_2 omega info">
+          considéré <a href="#">subtil</a>, <a href="#">divertissant</a>, <a href="#">transcendant</a><br>
+        </div>
+      </header>
 
-  <header class="title clear wide_4">
-    <h1><%= @article.display_title %></h1>
-    <% if @article.subtitle? -%>
-    <h2 class="sans"><%= @article.subtitle %></h2>
-    <% end -%>
-  </header>
-  
-  <div class="body wide_3">
-    <%= @article.article %>
-  </div>
-  
-  <%= link_to("Modifier cet article", edit_user_article_url(@article.user, @article)) if can? :update, @article %>
-  
-  <% if can? :create, Epithet -%>
-  <%= render 'epithet_form' %>
-  <% end %>
-  
-  <div class="bio wide_2 pad_1 lighter">
-    <%= link_to("Écrire une bio", edit_user_registration_url, :class => "hidden_nojs show_bio_form") %>
-    <div class="bio_form">
-      <%= render 'bio_form' %>
-    </div>
-  </div>
-</article>
+      <header class="title">
+        <h1><%= @article.display_title %></h1>
+        <% if @article.subtitle? -%>
+        <h2 class="sans"><%= @article.subtitle %></h2>
+        <% end -%>
+        <div class="author sans light">par <%= link_to(@article.user.name, user_url(@article.user)) %></div>
+      </header>
 
-<section class="comments pad_1 wide_2">
-  <h1>
-    <% if @article.comments.count > 0 %>
-    <span class="count"><%= @article.comments.count %></span>
-    <% end %>
-  commentation<%= "s" unless @article.comments.count == 1 %></h1>
-  <% if @article.comments.blank? -%>
-  <p class="lighter">Aucune commentation n’a encore été écrite.</p>
-  <% else -%>
-  <dl class="comments">
-    <% @article.comments.each do |comment| -%>
-    <dt class="sans lighter">
-      <span class="user">
-      <% if user = comment.user -%>
-        <%= user.name %>
-      <% elsif !comment.author.blank? -%>
-        <%= comment.author %>
-      <% else -%>
-        Visiteur stupide et anonyme
+      <div class="grid_6 alpha body">
+        <%= @article.article %>
+      </div>
+
+      <%= link_to("Modifier cet article", edit_user_article_url(@article.user, @article)) if can? :update, @article %>
+
+      <% if can? :create, Epithet -%>
+      <%= render 'epithet_form' %>
+      <% end %>
+
+      <div class="grid_4 prefix_2 suffix_2 bio lighter">
+        <%= link_to("Écrire une bio", edit_user_registration_url, :class => "hidden_nojs show_bio_form") %>
+        <div class="bio_form">
+          <%= render 'bio_form' %>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="comments container_10">
+  <div class="grid_6 prefix_2">
+    <h1 class="grid_8 alpha pull_1">
+      <% if @article.comments.count > 0 %>
+      <span class="count"><%= @article.comments.count %></span>
+      <% end %>
+      commentation<%= "s" unless @article.comments.count == 1 %>
+    </h1>
+    <% if @article.comments.blank? -%>
+    <p class="lighter">Aucune commentation n’a encore été écrite.</p>
+    <% else -%>
+    <dl class="comments">
+      <% @article.comments.each do |comment| -%>
+      <dt class="sans lighter">
+        <span class="user">
+        <% if user = comment.user -%>
+          <%= user.name %>
+        <% elsif !comment.author.blank? -%>
+          <%= comment.author %>
+        <% else -%>
+          Visiteur stupide et anonyme
+        <% end -%>
+        </span>
+        – <%= date_and_time_tag(comment.created_at) %>
+      </dt>
+      <dd><%= comment.comment %></dd>
       <% end -%>
-      </span>
-      – <%= date_and_time_tag(comment.created_at) %>
-    </dt>
-    <dd><%= comment.comment %></dd>
+    </dl>
     <% end -%>
-  </dl>
-  <% end -%>
-  <%= render 'comment_form' %>
+    <%= render 'comment_form' %>
+  </div>
 </section>

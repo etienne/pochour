@@ -1,5 +1,4 @@
 <%= simple_form_for [@article.user, @article, @article.comments.build] do |f| %>
-  
   <% default_name = current_user.name if user_signed_in? -%>
   <%= f.input :author %>
   <%= f.input :comment, :input_html => { :value => default_name } %>

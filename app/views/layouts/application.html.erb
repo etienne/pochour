@@ -8,12 +8,6 @@
 </head>
 <body class="<%= controller_name %>">
 
-<% if content_for? :header %>
-<header>
-  <%= yield :header %>
-</header>
-<% end %>
-
 <%= link_to("accueil", root_path, :id => "home_link") unless controller_name == "home" %>
 
 <div class="notice"><%= notice %></div>

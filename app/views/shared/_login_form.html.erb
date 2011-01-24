@@ -1,12 +1,11 @@
-<p>Ça faut un compte pour écrire un article. <%= link_to "Inscrivez-vous", new_user_registration_path %>, c'est gratuit et c'est pas cher.</p>
+<p class="light">Ça faut un compte pour écrire un article. <%= link_to "Inscrivez-vous", new_user_registration_path %>, c'est gratuit et c'est pas cher.</p>
 
-<%= form_for(:user, :url => user_session_path) do |f| %>
-  <p><%= f.label :email, "Courriel" %><br />
-  <%= f.text_field :email %></p>
-  <p><%= f.label :password, "Mot de passe" %><br />
-  <%= f.password_field :password %></p>
-  <p><%= f.check_box :remember_me %> <%= f.label :remember_me, "Se souvenir de moi" %></p>
-  <p><%= f.submit "Connectation" %></p>
-  
+<%= simple_form_for(:user, :url => user_session_path) do |f| %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <div class="check_box">
+    <%= f.check_box :remember_me %> <%= f.label :remember_me, "Se souvenir de moi" %>
+  </div>
+  <%= f.submit "Connectation" %>
   <p><%= link_to "Bout d’viande, j'ai oublié mon mot de passe", new_user_password_path %></p>
 <% end %>
