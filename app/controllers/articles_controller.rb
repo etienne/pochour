@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  load_and_authorize_resource
+  authorize_resource
   
   def new
     @article = Article.new
