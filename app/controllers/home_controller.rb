@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @articles = Article.all(:limit => 12)
+    @articles = Article.order("created_at DESC").limit(12)
   end
 end
