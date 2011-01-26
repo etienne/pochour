@@ -16,7 +16,7 @@
         <% if @article.subtitle? -%>
         <h2 class="sans"><%= @article.subtitle %></h2>
         <% end -%>
-        <div class="author sans light">par <%= link_to(@article.user.name, user_url(@article.user)) %></div>
+        <div class="author sans light">par <%= link_to(@article.user.name, users_url(@article.user)) %></div>
       </header>
 
       <div class="grid_6 alpha body">
@@ -31,9 +31,6 @@
 
       <div class="grid_4 prefix_2 suffix_2 bio lighter">
         <%= link_to("Écrire une bio", edit_user_registration_url, :class => "hidden_nojs show_bio_form") %>
-        <div class="bio_form">
-          <%= render 'bio_form' %>
-        </div>
       </div>
     </article>
   </div>
