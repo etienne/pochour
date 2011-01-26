@@ -27,13 +27,17 @@ gem "simple_form"
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for certain environments:
+
+group :test, :development do
+  gem 'rspec-rails'
+end
+
 group :test do
-  gem "shoulda"
+  gem "shoulda-matchers"
   gem 'capybara', "0.3.9"
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
-  gem 'rspec-rails'
   gem 'launchy'
   gem 'factory_girl_rails'
 end
