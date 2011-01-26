@@ -157,7 +157,7 @@ ul.articles li {
   float: left;
 }
 
-ul.articles li.hover {
+ul.articles li:hover {
   background-color: #212428;
   cursor: hand;
   cursor: pointer;
@@ -165,7 +165,7 @@ ul.articles li.hover {
   padding-left: 17px;
 }
 
-ul.articles li.hover a, ul.articles li.hover div.author {
+ul.articles li:hover a, ul.articles li:hover div.author {
   color: white;
 }
 
