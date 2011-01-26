@@ -1,10 +1,12 @@
 $(document).ready(function(){
-  $(".hidden_nojs").show();
-  
-  $("body.articles div.bio_form").hide();
-  $("body.articles a.show_bio_form").click(function() {
-    $("body.articles div.bio_form").show();
-    $(this).hide();
-    return false;
-  });
+  // Make specified <li>’s clickable. Use the first <a> as link target.
+  $('ul.clickable_items li').each(function(item) {
+    $(this).mouseover(function() {
+      $(this).addClass('hover');
+    }).mouseout(function() {
+      $(this).removeClass('hover');
+    }).click(function() {
+      location.href = $(this).find('a').first().attr('href');
+    })
+	});
 });

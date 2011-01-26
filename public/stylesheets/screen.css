@@ -152,9 +152,21 @@ ul.articles li {
   width: 190px;
   height: 190px;
   margin-bottom: 17px;
-  padding: 17px 16px 17px 17px;
+  padding: 17px 17px 17px 16px;
   border-left: 1px solid #eaebeb;
   float: left;
+}
+
+ul.articles li.hover {
+  background-color: #212428;
+  cursor: hand;
+  cursor: pointer;
+  border-left: 0;
+  padding-left: 17px;
+}
+
+ul.articles li.hover a, ul.articles li.hover div.author {
+  color: white;
 }
 
 ul.articles h1 a {
@@ -168,7 +180,7 @@ ul.articles div.body {
 
 ul.articles div.meta {
   position: absolute;
-  bottom: 0;
+  bottom: 17px;
   font-size: 12px;
   line-height: 19px;
 }
