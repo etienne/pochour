@@ -2,7 +2,6 @@ body {
   font: 14px/21px Georgia, "Droid Serif", serif;
   color: #212428;
   background-color: white;
-/*  background: white url("../images/grid.png") repeat-y;*/
   padding: 0;
   margin: 0;
 }
@@ -14,21 +13,14 @@ ul {
 a {
   color: #212428;
   text-decoration: none;
+  border-bottom: 1px solid rgba(33, 36, 40, 0.2);
 }
 
 a:hover {
   color: white;
   background-color: #212428;
-}
-
-/* Grid test */
-
-.grid_test {
-  background-color: #eee;
-}
-
-.grid_test div {
-  background-color: green;
+  border: 0;
+  padding: 3px 0 2px;
 }
 
 /* Helper classes */
@@ -38,13 +30,12 @@ a:hover {
 }
 
 .light {
-  color: #858a8d;
+  color: rgba(33, 36, 40, 0.6);
 }
 
 .light a {
   font-weight: bold;
-  color: #40464b;
-  border-bottom: 1px solid #bcbdbe;
+/*  color: #40464b;*/
 }
 
 .light a:hover {
@@ -73,6 +64,8 @@ a#home_link {
   font-size: 16px;
   padding: 0 17px;
   line-height: 34px;
+  border: 0;
+  z-index: 100;
 }
 
 /* Forms */
@@ -165,6 +158,10 @@ ul.articles li:hover {
   padding-left: 17px;
 }
 
+ul.articles li:hover .light {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 ul.articles li:hover a, ul.articles li:hover div.author {
   color: white;
 }
@@ -187,7 +184,7 @@ ul.articles div.meta {
 
 ul.articles div.author {
   font-weight: bold;
-  color: #212428;
+/*  color: #212428;*/
 }
 
 /* Article page */

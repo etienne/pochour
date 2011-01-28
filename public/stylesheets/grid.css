@@ -293,3 +293,15 @@
 .clearfix {
 	display: block;
 }
+
+/* Grid test
+----------------------------------------------------------------------------------------------------*/
+
+.grid_test {
+  background-color: #eee;
+}
+
+.grid_test div {
+  background-color: green;
+}
+
