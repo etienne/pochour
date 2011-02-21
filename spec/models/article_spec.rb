@@ -43,4 +43,11 @@ describe Article do
       @article.subtitle?.should be_true
     end
   end
+  
+  context "with an unsluggable title" do
+    it "uses a generic slug" do
+      article = Factory(:article, :title => "(...)")
+      article.friendly_id.should eq("sans-titre")
+    end
+  end
 end
