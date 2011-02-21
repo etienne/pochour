@@ -2,5 +2,6 @@
 .autotest
 .DS_Store
 db/*.sqlite3
+db/legacy/*
 log/*.log
 tmp/**/*
