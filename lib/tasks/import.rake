@@ -44,7 +44,12 @@ namespace :import do
       a.title = article[:title].blank? ? "(Sans titre)" : article[:title]
       a.title << " : " << article[:subtitle] unless article[:subtitle].blank?
       a.user_id = article[:author]
-      a.article = article[:text].blank? ? " " : article[:text]
+      if article[:text].blank?
+        a.article = " "
+      else
+        escaped_string = article[:text].gsub(/["`]/, '\\1')
+        a.article = %x{php lib/legacy/writedown.php "#{escaped_string}"}
+      end
       a.created_at = Date.parse(article[:date])
       a.updated_at = Date.parse(article[:datemodified]) unless (article[:datemodified] == "0000-00-00 00:00:00" || article[:datemodified].blank?)
       a.save!
