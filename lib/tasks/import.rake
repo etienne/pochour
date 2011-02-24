@@ -19,15 +19,14 @@ namespace :import do
     User.delete_all
     users = hashes_from_xml("db/legacy/users.xml", "users")
     users.each do |user|
-      puts "Attempting to import the following user:"
-      puts user.to_yaml
+      puts "Attempting to import user: #{user[:name]}"
       u = User.new(user)
       u.id = user[:id]
       u.bio = user[:bio_fr]
       u.admin = true if user[:status] == "admin"
-      u.created_at = Date.parse(user[:registered])
+      u.created_at = Time.parse(user[:registered])
       u.save!
-      puts "Successfully imported user '#{user[:name]}'"
+      puts "Great success."
       puts "----------------------------------------------------------"
     end
   end
@@ -50,14 +49,38 @@ namespace :import do
         escaped_string = article[:text].gsub(/["`]/, '\\1')
         a.article = %x{php lib/legacy/writedown.php "#{escaped_string}"}
       end
-      a.created_at = Date.parse(article[:date])
-      a.updated_at = Date.parse(article[:datemodified]) unless (article[:datemodified] == "0000-00-00 00:00:00" || article[:datemodified].blank?)
+      a.created_at = Time.parse(article[:date])
+      a.updated_at = Time.parse(article[:datemodified]) unless (article[:datemodified] == "0000-00-00 00:00:00" || article[:datemodified].blank?)
       a.save!
       puts "Great success."
       puts "----------------------------------------------------------"
     end
   end
+
+  desc "Import comments from legacy database"
+  task :comments => :environment do
+    puts "Deleting previous comments..."
+    Comment.delete_all
+    puts "Importing comments..."
+    comments = hashes_from_xml("db/legacy/commentations.xml", "commentations")
+    comments.each do |comment|
+      c = Comment.new
+      c.id = comment[:id]
+      c.user_id = comment[:authorID] unless comment[:authorID].blank?
+      c.author = comment[:author] unless comment[:author].blank?
+      if comment[:text].blank?
+        c.comment = " "
+      else
+        escaped_string = comment[:text].gsub(/["`]/, '\\1')
+        c.comment = %x{php lib/legacy/writedown.php "#{escaped_string}"}
+      end
+      c.article_id = comment[:article]
+      c.created_at = Time.parse(comment[:date])
+      c.save!
+      puts "Imported comment ID " + c.id.to_s
+    end
+  end
   
   desc "Import all data from legacy database"
-  task :all => [:users, :articles]
+  task :all => [:users, :articles, :comments]
 end
