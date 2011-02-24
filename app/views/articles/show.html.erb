@@ -52,7 +52,7 @@
       <dt class="sans lighter">
         <span class="user">
         <% if user = comment.user -%>
-          <%= user.name %>
+          <%= link_to(user.name, users_url(user)) %>
         <% elsif !comment.author.blank? -%>
           <%= comment.author %>
         <% else -%>
@@ -61,7 +61,7 @@
         </span>
         – <%= date_and_time_tag(comment.created_at) %>
       </dt>
-      <dd><%= comment.comment %></dd>
+      <dd><%= sanitize comment.comment %></dd>
       <% end -%>
     </dl>
     <% end -%>

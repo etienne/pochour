@@ -26,6 +26,10 @@ Factory.define :article do |a|
   a.association :user
 end
 
+Factory.define :comment do |c|
+  c.comment "Some random comment"
+end
+
 Factory.define :epithet do |e|
   e.name "fucked up"
   e.approved true

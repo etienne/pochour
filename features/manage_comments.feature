@@ -14,8 +14,17 @@ Feature: Manage comments
       | Commentation | J'ai ben aimé ça moi. |
     And I press "Publier"
     Then I should be on the article page "My first english publication"
-    And I should see "Roger Lemuscadet"
+    And I should see "Roger Lemuscadet" as regular text
     And I should see "J'ai ben aimé ça moi."
+
+  Scenario: Visitor posts a comment anonymously
+    Given I am not logged in
+    And I am on the article page "My first english publication"
+    When I fill in "Commentation" with "Je suis complètement anonyme."
+    And I press "Publier"
+    Then I should be on the article page "My first english publication"
+    And I should see "Visiteur stupide et anonyme" as regular text
+    And I should see "Je suis complètement anonyme."
   
   Scenario: Member posts a comment
     Given I am logged in as "G. Roberge"
@@ -23,8 +32,17 @@ Feature: Manage comments
     When I fill in "Commentation" with "PAS FIN LANDAIS 1820 ROSEMONT"
     And I press "Publier"
     Then I should be on the article page "My first english publication"
-    And I should see "G. Roberge"
+    And I should see "G. Roberge" as a link
     And I should see "PAS FIN LANDAIS 1820 ROSEMONT"
   
-  
-  
+  Scenario: Member posts a comment using a different name
+    Given I am logged in as "G. Roberge"
+    And I am on the article page "My first english publication"
+    When I fill in the following:
+      | Nom          | Some dudeface                    |
+      | Commentation | Personne ne saura que c’est moi. |
+    And I press "Publier"
+    Then I should be on the article page "My first english publication"
+    And I should see "Some dudeface" as regular text
+    And I should not see "G. Roberge" within "dl.comments"
+    And I should see "Personne ne saura que c’est moi."
