@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
-  before_filter :ensure_admin!
-  
   def index
     @users = User.order('name')
+  end
+  
+  def show
+    @user = User.find(params[:user_id])
   end
 end

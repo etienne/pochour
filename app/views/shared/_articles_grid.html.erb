@@ -1,0 +1,18 @@
+<% unless articles.empty? %>
+<ul class="articles clickable_items">
+  <% articles.each do |article| %>
+  <li>
+    <article>
+      <h1 class="sans"><%= link_to article.title, user_article_path(article.user, article) %></h1>
+      <div class="body light">
+        Are you ready for a poem, one heck of a poem.
+      </div>
+      <div class="meta sans light">
+        <div class="author"><%= article.user.name %></div>
+        <%= date_tag article.created_at %>
+      </div>
+    </article>
+  </li>
+  <% end %>
+</ul>
+<% end %>

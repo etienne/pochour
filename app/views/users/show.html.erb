@@ -1,0 +1,14 @@
+<section class="user clearfix">
+  <div class="container_10">
+    <header class="grid_8 prefix_2 title">
+      <h1><%= @user.name %></h1>
+      <h2 class="sans"><%= @user.articles.count %> articles</h2>
+    </header>
+
+    <sidebar class="grid_2 push_8 sans">
+      &nbsp;
+    </sidebar>
+    
+    <%= render :partial => 'shared/articles_grid', :locals => { :articles => @user.articles.order("created_at DESC") } %>
+  </div>
+</section>
