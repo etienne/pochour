@@ -1,6 +1,7 @@
 .bundle
 .autotest
 .DS_Store
+.rvmrc
 db/*.sqlite3
 db/legacy/*
 log/*.log
