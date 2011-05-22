@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class EpithetsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])

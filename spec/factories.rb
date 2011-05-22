@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 Factory.sequence :name do |n|
   "Steve Fields #{n}"
 end
