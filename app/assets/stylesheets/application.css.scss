@@ -1,0 +1,199 @@
+/*
+ *= require reset
+ *= require grid
+ *= require_self
+ *= require_tree .
+*/
+
+body {
+  font: 14px/21px Georgia, "Droid Serif", serif;
+  color: #212428;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #212428;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(33, 36, 40, 0.2);
+}
+
+a:hover {
+  color: white;
+  background-color: #212428;
+  border: 0;
+  padding: 3px 0 2px;
+}
+
+/* Helper classes */
+
+.sans, label, input[type=submit] {
+  font-family: "Titillium";
+}
+
+.light {
+  color: rgba(33, 36, 40, 0.6);
+  
+  a {
+    font-weight: bold;
+    /*  color: #40464b;*/
+  }
+  
+  a:hover {
+    color: white;
+  }
+}
+
+.lighter {
+  color: #9b9fa3;
+}
+
+.clear {
+  clear: both;
+}
+
+.hidden_nojs {
+  display: none;
+}
+
+/* Sitewide elements */
+
+a#home_link {
+  position: absolute;
+  top: 178px;
+  font-family: "Titillium";
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0 17px;
+  line-height: 34px;
+  border: 0;
+  z-index: 100;
+}
+
+/* Forms */
+
+form {
+  div.input {
+    margin-bottom: 8px;
+  }
+  
+  label {
+    font-size: 14px;
+    padding: 2px 0;
+    font-weight: bold;
+    display: block;
+    color: #40464b;
+  }
+  
+  input.string, textarea.text, input.password {
+    font: 14px/21px Georgia, "Droid Serif", serif;
+    padding: 2px;
+    border: 1px solid #D5D5D5;
+  }
+  
+  input[type=submit] {
+    border: 0;
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 8px;
+    padding: 5px 12px;
+    font-weight: bold;
+    background-color: #40464b;
+    color: white;
+    cursor: hand;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #212428;
+  }
+  
+  div.check_box input {
+    position: relative;
+    top: -2px;
+  }
+  
+  div.check_box label {
+    margin-left: 4px;
+    display: inline;
+  }
+}
+
+/* Home */
+
+sidebar {
+  input.string, input.password {
+    width: 100%;
+  }
+  
+  form {
+    margin: 12px 0;
+  }
+} 
+
+section.home {
+  background: white url("dessin_bg.png") no-repeat top left;
+  padding-top: 75px;
+}
+
+ul.articles {
+  position: relative;
+  width: 672px;
+  margin-left: 9px;
+  left: -17px;
+  top: -17px;
+  float: left;
+  background-color: white;
+  
+  li {
+    position: relative;
+    width: 190px;
+    height: 190px;
+    margin-bottom: 17px;
+    padding: 17px 17px 17px 16px;
+    border-left: 1px solid #eaebeb;
+    float: left;
+  }
+  
+  li:hover {
+    background-color: #212428;
+    cursor: hand;
+    cursor: pointer;
+    border-left: 0;
+    padding-left: 17px;
+    
+    .light {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    a, div.author {
+      color: white;
+    }
+  }
+  
+  h1 a {
+    font-weight: bold;
+  }
+  
+  div.body {
+    font-size: 13px;
+    line-height: 19px;
+  }
+  
+  div.meta {
+    position: absolute;
+    bottom: 17px;
+    font-size: 12px;
+    line-height: 19px;
+  }
+  
+  div.author {
+    font-weight: bold;
+/*  color: #212428;*/
+  }
+}

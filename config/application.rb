@@ -41,5 +41,8 @@ module Pochour
 
     # Set locale
     I18n.default_locale = 'fr'
+    
+    # Enable the asset pipeline
+    config.assets.enabled = true
   end
 end
