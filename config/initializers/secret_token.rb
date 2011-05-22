@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Pochour::Application.config.secret_token = 'eb81d183f3665c5e7169c5516e1dbd255aad51078d036119a2648264198708ade7640bc116c75b489f17d65dba531580efc751eab5afb7d76337f47fa47fbfdf'
+Pochour::Application.config.secret_token = 'f0faace349649756800ddccc70447d1ed7824684d5a7ee0e219540fbff1d9071a9fea3eb3fdf9cb24bb72217d2b2a76c970b2b1a2d7b4fff235deb6592f98ae4'
