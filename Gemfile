@@ -9,7 +9,8 @@ gem 'rake'
 gem 'sqlite3'
 gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem "cancan"
-gem "friendly_id", "~> 3.1"
+# gem "friendly_id", "~> 3.2"
+gem "friendly_id", :git => "git://github.com/norman/friendly_id.git", :branch => "edge"
 gem "simple_form"
 
 # Asset template engines  
@@ -30,8 +31,7 @@ gem 'jquery-rails'
 
 # Bundle the extra gems:
 # gem 'bj'
-# gem 'nokogiri', '1.4.1'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'nokogiri'
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for certain environments:
