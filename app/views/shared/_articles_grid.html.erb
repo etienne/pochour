@@ -8,7 +8,9 @@
         <%= sanitize truncate_html(article.article, 80) %>
       </div>
       <div class="meta sans light">
+        <% if show_author_names -%>
         <div class="author"><%= article.user.name %></div>
+        <% end -%>
         <%= date_tag article.created_at %>
       </div>
     </article>

@@ -9,6 +9,6 @@
       &nbsp;
     </sidebar>
     
-    <%= render :partial => 'shared/articles_grid', :locals => { :articles => @user.articles.order("created_at DESC") } %>
+    <%= render :partial => 'shared/articles_grid', :locals => { :articles => @user.articles.order("created_at DESC"), :show_author_names => false } %>
   </div>
 </section>

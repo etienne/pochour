@@ -32,3 +32,4 @@ Feature: Read articles
     Then I should see "Roger Sansfaçon"
     And I should see "Comment voyager avec un saumon"
     And I should not see "La vengeance de la patate chaude"
+    And I should not see "Roger Sansfaçon" within the list of articles
