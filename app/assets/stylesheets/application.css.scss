@@ -94,6 +94,11 @@ form {
     font: 14px/21px Georgia, "Droid Serif", serif;
     padding: 2px;
     border: 1px solid #D5D5D5;
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(33, 36, 40, 0.4);
+    }
   }
   
   input[type=submit] {

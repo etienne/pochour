@@ -8,3 +8,8 @@ ul.articles li:hover,
 input[type=submit]:hover {
   background-color: rgb(COLOR);
 }
+
+form input.string:focus, form textarea.text:focus, form input.password:focus {
+  border-color: rgb(COLOR);
+  box-shadow: 0 0 5px rgb(COLOR);
+}

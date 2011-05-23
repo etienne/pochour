@@ -1,5 +1,71 @@
+/* Article lists */
+
+ul.articles {
+  position: relative;
+  width: 672px;
+  margin-left: 9px;
+  left: -17px;
+  top: -17px;
+  float: left;
+  background-color: white;
+  
+  > li {
+    position: relative;
+    width: 190px;
+    height: 190px;
+    margin-bottom: 24px;
+    padding: 12px 17px 12px 16px;
+    border-left: 1px solid #eaebeb;
+    float: left;
+    
+    &:hover {
+      background-color: #212428;
+      cursor: hand;
+      cursor: pointer;
+      border-left: 0;
+      padding-left: 17px;
+
+      .light {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      a, div.author {
+        color: white;
+      }
+    }
+  }
+  
+  h1 {
+    font-size: 15px;
+    line-height: 22px;
+    
+    a {
+      font-weight: bold;
+    }
+  }
+  
+  div.body {
+    font-size: 13px;
+    line-height: 19px;
+  }
+  
+  div.meta {
+    position: absolute;
+    bottom: 12px;
+    font-size: 12px;
+    line-height: 19px;
+  }
+  
+  div.author {
+    font-weight: bold;
+/*  color: #212428;*/
+  }
+}
+
+/* Single articles */
+
 body.articles {
-  background-image: url("bottom_bg.png");
+  background-color: #f9f9f9;
   
   article div.body {
     font-size: 16px;
@@ -52,7 +118,7 @@ header.title {
 }
 
 section.comments {
-  padding-top: 24px;
+  padding: 24px 0 75px;
   
   h1 {
     font-size: 48px;
@@ -69,7 +135,7 @@ section.comments {
   }
   
   form {
-    margin-top: 20px;
+    margin-top: 40px;
     
     input.string {
       width: 479px;
@@ -98,6 +164,10 @@ dl.comments {
   
   dd {
     margin-bottom: 16px;
+    
+    p {
+      margin-bottom: 8px;
+    }
   }
 }
 
