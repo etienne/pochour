@@ -32,7 +32,7 @@ Feature: Manage comments
     When I fill in "Commentation" with "PAS FIN LANDAIS 1820 ROSEMONT"
     And I press "Publier"
     Then I should be on the article page "My first english publication"
-    And I should see "G. Roberge" as a link
+    And I should see "G. Roberge" within a link
     And I should see "PAS FIN LANDAIS 1820 ROSEMONT"
   
   Scenario: Member posts a comment using a different name
@@ -44,5 +44,5 @@ Feature: Manage comments
     And I press "Publier"
     Then I should be on the article page "My first english publication"
     And I should see "Some dudeface" as regular text
-    And I should not see "G. Roberge" within "dl.comments"
+    And I should not see "G. Roberge" within the list of comments
     And I should see "Personne ne saura que c’est moi."

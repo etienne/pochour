@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 Given /^I have one\s+user "([^\"]*)" with email "([^\"]*)" and password "([^\"]*)"$/ do |name, email, password|
   Factory(:user, {
     :email => email,
