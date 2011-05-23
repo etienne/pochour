@@ -14,18 +14,25 @@ module TextHelper
     algorithms << n.parse(text.split(%r|<br\s?/?>|)[0..2].join("<br>"))  # First 3 line breaks
     algorithms << n.parse(text.split(/\.[\s<]/).first + ".")             # First sentence
     algorithms << doc.truncate((ideal_length * 1.3).round)               # Truncated string
-    puts algorithms.last
+    algorithms << doc                                                    # Original full text
     algorithms.each do |fragment|
-      distance = (fragment.inner_text.length - ideal_length).abs
-      if best_distance.nil? || distance < best_distance
-        best_distance = distance
-        best_fragment = fragment
-      end 
+      if fragment.respond_to? "inner_text"
+        distance = (fragment.inner_text.length - ideal_length).abs
+        if best_distance.nil? || distance < best_distance
+          best_distance = distance
+          best_fragment = fragment
+        end
+      end
     end
+    
+    puts best_fragment.to_s
+    
     if best_fragment.inner_text.last =~ /[\.…]/ 
       best_fragment.to_s
-    else
+    elsif best_fragment.children.last.is_a? Nokogiri::XML::Element
       best_fragment.children.last << "..."
+      best_fragment.to_s
+    else
       best_fragment.to_s
     end
   end

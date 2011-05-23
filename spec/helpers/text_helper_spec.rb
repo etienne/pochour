@@ -23,5 +23,9 @@ describe TextHelper do
     it "returns part of a sentence" do
       truncate_html(@string, 9).should eq("<p>Première phr...</p>")
     end
+    
+    it "returns the original text" do
+      truncate_html("Fucké raide là", 14).should eq("Fucké raide là")
+    end
   end
 end
