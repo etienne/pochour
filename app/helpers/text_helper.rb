@@ -25,8 +25,6 @@ module TextHelper
       end
     end
     
-    puts best_fragment.to_s
-    
     if best_fragment.inner_text.last =~ /[\.…]/ 
       best_fragment.to_s
     elsif best_fragment.children.last.is_a? Nokogiri::XML::Element
