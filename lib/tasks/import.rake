@@ -51,6 +51,10 @@ namespace :import do
         escaped_string = article[:text].gsub(/["`]/, '\\1')
         a.body = %x{php lib/legacy/writedown.php "#{escaped_string}"}
       end
+      unless article[:abstract].blank?
+        escaped_string = article[:abstract].gsub(/["`]/, '\\1')
+        a.abstract = %x{php lib/legacy/writedown.php "#{escaped_string}"}
+      end
       a.created_at = Time.parse(article[:date])
       a.updated_at = Time.parse(article[:datemodified]) unless (article[:datemodified] == "0000-00-00 00:00:00" || article[:datemodified].blank?)
       a.save!

@@ -5,12 +5,14 @@ Feature: Read articles
   
   Scenario: Visitor looks at the list of articles on the home page and follows a link
     Given the following articles exist:
-      | Title                                         | Body               |
-      | Des grosses patates chaudes                   | Malade ton article |
-      | De l’impossibilité de la grosse patate chaude | Fucké tes affaires |
-      | De l’air salin en présence de patates chaudes | Spécial ta chose   |
+      | Title                                         | Body               | Abstract               |
+      | Des grosses patates chaudes                   | Malade ton article | J'ai un abstract cool. |
+      | De l’impossibilité de la grosse patate chaude | Fucké tes affaires |                        |
+      | De l’air salin en présence de patates chaudes | Spécial ta chose   |                        |
     When I go to the home page
     Then I should see "Des grosses patates chaudes"
+    And I should see "J'ai un abstract cool."
+    And I should not see "Malade ton article"
     And I should see "De l’impossibilité de la grosse patate chaude"
     And I should see "De l’air salin en présence de patates chaudes"
     When I follow "Des grosses patates chaudes"
