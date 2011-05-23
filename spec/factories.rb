@@ -24,7 +24,7 @@ end
 
 Factory.define :article do |a|
   a.title "Trop malade ton titre"
-  a.article "Fucké raide là"
+  a.body "Fucké raide là"
   a.association :user
 end
 

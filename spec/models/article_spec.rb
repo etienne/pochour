@@ -8,7 +8,7 @@ describe Article do
   it { should have_and_belong_to_many(:epithets) }
 
   it { should validate_presence_of(:title) }
-  it { should validate_presence_of(:article) }
+  it { should validate_presence_of(:body) }
   
   context "with no subtitle" do
     before do

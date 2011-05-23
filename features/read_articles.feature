@@ -5,7 +5,7 @@ Feature: Read articles
   
   Scenario: Visitor looks at the list of articles on the home page and follows a link
     Given the following articles exist:
-      | Title                                         | Article            |
+      | Title                                         | Body               |
       | Des grosses patates chaudes                   | Malade ton article |
       | De l’impossibilité de la grosse patate chaude | Fucké tes affaires |
       | De l’air salin en présence de patates chaudes | Spécial ta chose   |
