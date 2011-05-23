@@ -5,7 +5,7 @@
     <article>
       <h1 class="sans"><%= link_to article.title, user_article_path(article.user, article) %></h1>
       <div class="body light">
-        <%= sanitize article.abstract_or_excerpt %>
+        <%= sanitize truncate_html(article.article, 80) %>
       </div>
       <div class="meta sans light">
         <div class="author"><%= article.user.name %></div>
