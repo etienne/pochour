@@ -15,6 +15,13 @@ namespace :import do
     hashes
   end
   
+  def writedown(string)
+    file = Tempfile.new('pochour-import-legacy')
+    file << string
+    file.flush
+    `php lib/legacy/writedown.php #{file.path}`
+  end
+  
   desc "Import users from legacy database"
   task :users => :environment do
     puts "Deleting previous users..."
@@ -43,20 +50,17 @@ namespace :import do
       a = Article.new
       a.id = article[:id]
       a.title = article[:title].blank? ? "(Sans titre)" : article[:title]
-      a.title << " : " << article[:subtitle] unless article[:subtitle].blank?
+      a.title << " : " << article[:subtitle] unless article[:subtitle].blank?
       a.user_id = article[:author]
+      a.draft = article[:draft]
       if article[:text].blank?
         a.body = " "
       else
-        escaped_string = article[:text].gsub(/["`]/, '\\1')
-        a.body = %x{php lib/legacy/writedown.php "#{escaped_string}"}
+        a.body = writedown(article[:text])
       end
-      unless article[:abstract].blank?
-        escaped_string = article[:abstract].gsub(/["`]/, '\\1')
-        a.abstract = %x{php lib/legacy/writedown.php "#{escaped_string}"}
-      end
-      a.created_at = Time.parse(article[:date])
-      a.updated_at = Time.parse(article[:datemodified]) unless (article[:datemodified] == "0000-00-00 00:00:00" || article[:datemodified].blank?)
+      a.abstract = writedown(article[:abstract]) unless article[:abstract].blank?
+      a.created_at = DateTime.parse(article[:date])
+      a.updated_at = DateTime.parse(article[:datemodified]) unless (article[:datemodified] == "0000-00-00 00:00:00" || article[:datemodified].blank?)
       a.save!
       puts "Great success."
       puts "----------------------------------------------------------"
@@ -70,6 +74,7 @@ namespace :import do
     puts "Importing comments..."
     comments = hashes_from_xml("db/legacy/commentations.xml", "commentations")
     comments.each do |comment|
+      break if comment[:article].blank?
       c = Comment.new
       c.id = comment[:id]
       c.user_id = comment[:authorID] unless comment[:authorID].blank?
@@ -77,11 +82,10 @@ namespace :import do
       if comment[:text].blank?
         c.comment = " "
       else
-        escaped_string = comment[:text].gsub(/["`]/, '\\1')
-        c.comment = %x{php lib/legacy/writedown.php "#{escaped_string}"}
+        c.comment = writedown(comment[:text])
       end
       c.article_id = comment[:article]
-      c.created_at = Time.parse(comment[:date])
+      c.created_at = DateTime.parse(comment[:date])
       c.save!
       puts "Imported comment ID " + c.id.to_s
     end

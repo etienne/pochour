@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110523185245) do
+ActiveRecord::Schema.define(:version => 20110523200405) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110523185245) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "abstract"
+    t.boolean  "draft"
   end
 
   create_table "articles_epithets", :id => false, :force => true do |t|

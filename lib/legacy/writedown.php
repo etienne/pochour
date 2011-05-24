@@ -174,6 +174,9 @@ class Writedown
 
 }
 
-print Writedown::Text2XHTML($argv[1]);
+// get contents of a file into a string
+$filename = $argv[1];
+$contents = file_get_contents($filename);
+print Writedown::Text2XHTML($contents);
 
 ?>
