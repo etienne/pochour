@@ -32,7 +32,8 @@ Feature: Manage comments
     When I fill in "Commentation" with "PAS FIN LANDAIS 1820 ROSEMONT"
     And I press "Publier"
     Then I should be on the article page "My first english publication"
-    And I should see "G. Roberge" within a link
+    # FIXME: This should use a cleaner selector, like "a link", but for some reason it doesn't work
+    And I should see "G. Roberge" within "dl.comments a"
     And I should see "PAS FIN LANDAIS 1820 ROSEMONT"
   
   Scenario: Member posts a comment using a different name

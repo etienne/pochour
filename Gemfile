@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0rc1'
+gem 'rails', '3.1.0rc4'
 gem 'rake'
 
 # Bundle edge Rails instead:
@@ -42,7 +42,7 @@ end
 
 group :test do
   gem "shoulda-matchers"
-  gem 'capybara', "0.3.9"
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
