@@ -1,0 +1,140 @@
+/*
+ *= require reset
+ *= require grid
+ *= require_self
+ *= require_tree .
+*/
+/* line 8, ../../app/assets/stylesheets/application.css.scss */
+body {
+  font: 14px/21px Georgia, "Droid Serif", serif;
+  color: #212428;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 16, ../../app/assets/stylesheets/application.css.scss */
+ul {
+  list-style: none;
+}
+
+/* line 20, ../../app/assets/stylesheets/application.css.scss */
+a {
+  color: #212428;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(33, 36, 40, 0.2);
+}
+
+/* line 26, ../../app/assets/stylesheets/application.css.scss */
+a:hover {
+  color: white;
+  background-color: #212428;
+  border: 0;
+  padding: 3px 0 2px;
+}
+
+/* line 33, ../../app/assets/stylesheets/application.css.scss */
+strong {
+  font-weight: bold;
+}
+
+/* Helper classes */
+/* line 39, ../../app/assets/stylesheets/application.css.scss */
+.sans, label, input[type=submit] {
+  font-family: "Titillium";
+}
+
+/* line 43, ../../app/assets/stylesheets/application.css.scss */
+.light {
+  color: rgba(33, 36, 40, 0.6);
+}
+/* line 46, ../../app/assets/stylesheets/application.css.scss */
+.light a {
+  font-weight: bold;
+  /*  color: #40464b;*/
+}
+/* line 51, ../../app/assets/stylesheets/application.css.scss */
+.light a:hover {
+  color: white;
+}
+
+/* line 56, ../../app/assets/stylesheets/application.css.scss */
+.lighter {
+  color: #9b9fa3;
+}
+
+/* line 60, ../../app/assets/stylesheets/application.css.scss */
+.clear {
+  clear: both;
+}
+
+/* line 64, ../../app/assets/stylesheets/application.css.scss */
+.hidden_nojs, .hide {
+  display: none;
+}
+
+/* Sitewide elements */
+/* line 70, ../../app/assets/stylesheets/application.css.scss */
+a#home_link {
+  position: fixed;
+  top: 178px;
+  font-family: "Titillium";
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0 17px;
+  line-height: 34px;
+  border: 0;
+  z-index: 100;
+}
+
+/* Forms */
+/* line 85, ../../app/assets/stylesheets/application.css.scss */
+form div.input {
+  margin-bottom: 8px;
+}
+/* line 89, ../../app/assets/stylesheets/application.css.scss */
+form label {
+  font-size: 14px;
+  padding: 2px 0;
+  font-weight: bold;
+  display: block;
+  color: #40464b;
+}
+/* line 97, ../../app/assets/stylesheets/application.css.scss */
+form input.string, form textarea.text, form input.password {
+  font: 14px/21px Georgia, "Droid Serif", serif;
+  padding: 2px;
+  border: 1px solid #D5D5D5;
+}
+/* line 102, ../../app/assets/stylesheets/application.css.scss */
+form input.string:focus, form textarea.text:focus, form input.password:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(33, 36, 40, 0.4);
+}
+/* line 108, ../../app/assets/stylesheets/application.css.scss */
+form input[type=submit] {
+  border: 0;
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 8px;
+  padding: 5px 12px;
+  font-weight: bold;
+  background-color: #40464b;
+  color: white;
+  cursor: hand;
+  cursor: pointer;
+}
+/* line 121, ../../app/assets/stylesheets/application.css.scss */
+form input[type=submit]:hover {
+  background-color: #212428;
+}
+/* line 125, ../../app/assets/stylesheets/application.css.scss */
+form div.check_box input {
+  position: relative;
+  top: -2px;
+}
+/* line 130, ../../app/assets/stylesheets/application.css.scss */
+form div.check_box label {
+  margin-left: 4px;
+  display: inline;
+}

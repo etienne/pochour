@@ -1,0 +1,19 @@
+/* line 2, ../../app/assets/stylesheets/home.css.scss */
+sidebar input.string, sidebar input.password {
+  width: 100%;
+}
+/* line 6, ../../app/assets/stylesheets/home.css.scss */
+sidebar form {
+  margin: 12px 0;
+}
+/* line 10, ../../app/assets/stylesheets/home.css.scss */
+sidebar p.actions {
+  margin-top: 9px;
+  font-size: 12px;
+}
+
+/* line 16, ../../app/assets/stylesheets/home.css.scss */
+section.home {
+  background: white url("dessin_bg.png") no-repeat top left;
+  padding: 0 0 75px 0;
+}

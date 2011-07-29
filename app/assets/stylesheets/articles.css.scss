@@ -13,7 +13,6 @@ ul.articles {
     position: relative;
     width: 190px;
     height: 190px;
-    margin-bottom: 24px;
     padding: 12px 17px 12px 16px;
     border-left: 1px solid #eaebeb;
     float: left;
@@ -36,11 +35,12 @@ ul.articles {
   }
   
   h1 {
-    font-size: 15px;
-    line-height: 22px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 23px;
     
     a {
-      font-weight: bold;
+      border-bottom: none;
     }
   }
   
@@ -50,15 +50,37 @@ ul.articles {
   }
   
   div.meta {
-    position: absolute;
-    bottom: 12px;
+    margin-top: 4px;
     font-size: 12px;
     line-height: 19px;
   }
   
   div.author {
+    font-size: 13px;
     font-weight: bold;
 /*  color: #212428;*/
+  }
+  
+  div.comments_count {
+    font-size: 11px;
+    line-height: 11px;
+    color: white;
+    margin: 4px 0 4px 6px;
+    float: right;
+    
+    div.count {
+      padding: 3px 5px 1px;
+      background-color: rgba(33, 36, 40, 0.3);
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+    }
+    
+    div.bubble_edge {
+      height: 4px;
+      overflow: hidden;
+      background: rgba(33, 36, 40, 0.3) url("bubble_edge.png") no-repeat top left;
+    }
   }
 }
 
@@ -95,7 +117,7 @@ header.meta div.info {
 
 header.title {
   clear: left;
-  padding: 67px 0 40px;
+  padding: 142px 0 40px;
   
   h1 {
     font-size: 61px;
@@ -114,6 +136,12 @@ header.title {
   div.author {
     padding-top: 14px;
     font-size: 15px;
+  }
+  
+  div.date {
+    padding-top: 4px;
+    font-size: 12px;
+    line-height: 19px;
   }
 }
 

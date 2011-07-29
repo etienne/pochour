@@ -3,14 +3,16 @@
   <% articles.each do |article| %>
   <li>
     <article>
-      <h1 class="sans"><%= link_to article.title, user_article_path(article.user, article) %></h1>
-      <div class="body light">
-        <% if article.abstract.blank? -%>
-        <%= sanitize truncate_html(article.body, 80) %>
-        <% else -%>
-        <%= sanitize article.abstract %>
-        <% end -%>
+      <% if article.comments.count > 0 -%>
+      <div class="comments_count sans">
+        <div class="count">
+          <%= article.comments.count %> <span class="hide">comments</span>
+        </div>
+        <div class="bubble_edge">&nbsp;</div>
       </div>
+      
+      <% end -%>
+      <h1 class="sans"><%= link_to article.title, user_article_path(article.user, article) %></h1>
       <div class="meta sans light">
         <% if show_author_names -%>
         <div class="author"><%= article.user.name %></div>

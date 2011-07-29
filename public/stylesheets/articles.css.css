@@ -1,0 +1,200 @@
+/* Article lists */
+/* line 3, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles {
+  position: relative;
+  width: 672px;
+  margin-left: 9px;
+  left: -17px;
+  top: -17px;
+  float: left;
+  background-color: white;
+}
+/* line 12, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles > li {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  padding: 12px 17px 12px 16px;
+  border-left: 1px solid #eaebeb;
+  float: left;
+}
+/* line 20, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles > li:hover {
+  background-color: #212428;
+  cursor: hand;
+  cursor: pointer;
+  border-left: 0;
+  padding-left: 17px;
+}
+/* line 27, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles > li:hover .light {
+  color: rgba(255, 255, 255, 0.6);
+}
+/* line 31, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles > li:hover a, ul.articles > li:hover div.author {
+  color: white;
+}
+/* line 37, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles h1 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 23px;
+}
+/* line 42, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles h1 a {
+  border-bottom: none;
+}
+/* line 47, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles div.body {
+  font-size: 13px;
+  line-height: 19px;
+}
+/* line 52, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles div.meta {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 19px;
+}
+/* line 58, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles div.author {
+  font-size: 13px;
+  font-weight: bold;
+  /*  color: #212428;*/
+}
+/* line 64, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles div.comments_count {
+  font-size: 11px;
+  line-height: 11px;
+  color: white;
+  margin: 4px 0 4px 6px;
+  float: right;
+}
+/* line 71, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles div.comments_count div.count {
+  padding: 3px 5px 1px;
+  background-color: rgba(33, 36, 40, 0.3);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 79, ../../app/assets/stylesheets/articles.css.scss */
+ul.articles div.comments_count div.bubble_edge {
+  height: 4px;
+  overflow: hidden;
+  background: rgba(33, 36, 40, 0.3) url("bubble_edge.png") no-repeat top left;
+}
+
+/* Single articles */
+/* line 89, ../../app/assets/stylesheets/articles.css.scss */
+body.articles {
+  background-color: #f9f9f9;
+}
+/* line 92, ../../app/assets/stylesheets/articles.css.scss */
+body.articles article div.body {
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 16px;
+}
+/* line 97, ../../app/assets/stylesheets/articles.css.scss */
+body.articles article div.body p {
+  margin-bottom: 14px;
+}
+
+/* line 103, ../../app/assets/stylesheets/articles.css.scss */
+section.article {
+  background-color: white;
+  padding-bottom: 30px;
+}
+
+/* line 108, ../../app/assets/stylesheets/articles.css.scss */
+header.meta div.info {
+  position: relative;
+  left: -17px;
+  border-left: 1px solid #eaebeb;
+  padding: 20px 0 17px 16px;
+  margin-right: -9px;
+  font-size: 12px;
+  line-height: 19px;
+}
+
+/* line 118, ../../app/assets/stylesheets/articles.css.scss */
+header.title {
+  clear: left;
+  padding: 142px 0 40px;
+}
+/* line 122, ../../app/assets/stylesheets/articles.css.scss */
+header.title h1 {
+  font-size: 61px;
+  line-height: 72px;
+}
+/* line 127, ../../app/assets/stylesheets/articles.css.scss */
+header.title h2 {
+  font-size: 34px;
+  font-weight: lighter;
+  line-height: 50px;
+  color: #212428;
+}
+/* line 136, ../../app/assets/stylesheets/articles.css.scss */
+header.title div.author {
+  padding-top: 14px;
+  font-size: 15px;
+}
+/* line 141, ../../app/assets/stylesheets/articles.css.scss */
+header.title div.date {
+  padding-top: 4px;
+  font-size: 12px;
+  line-height: 19px;
+}
+
+/* line 148, ../../app/assets/stylesheets/articles.css.scss */
+section.comments {
+  padding: 24px 0 75px;
+}
+/* line 151, ../../app/assets/stylesheets/articles.css.scss */
+section.comments h1 {
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 20px;
+}
+/* line 156, ../../app/assets/stylesheets/articles.css.scss */
+section.comments h1 span.count {
+  position: absolute;
+  left: -112px;
+  width: 95px;
+  text-align: right;
+  color: #b0b5b9;
+}
+/* line 165, ../../app/assets/stylesheets/articles.css.scss */
+section.comments form {
+  margin-top: 40px;
+}
+/* line 168, ../../app/assets/stylesheets/articles.css.scss */
+section.comments form input.string {
+  width: 479px;
+}
+/* line 172, ../../app/assets/stylesheets/articles.css.scss */
+section.comments form textarea.text {
+  width: 479px;
+  height: 130px;
+}
+
+/* Comments */
+/* line 182, ../../app/assets/stylesheets/articles.css.scss */
+dl.comments dt {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+/* line 186, ../../app/assets/stylesheets/articles.css.scss */
+dl.comments dt span.user {
+  font-weight: bold;
+  color: #6d7276;
+  font-size: 15px;
+}
+/* line 193, ../../app/assets/stylesheets/articles.css.scss */
+dl.comments dd {
+  margin-bottom: 16px;
+}
+/* line 196, ../../app/assets/stylesheets/articles.css.scss */
+dl.comments dd p {
+  margin-bottom: 8px;
+}

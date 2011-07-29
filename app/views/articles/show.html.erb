@@ -1,22 +1,17 @@
 <section class="article clearfix">
   <div class="container_10">
     <article class="grid_8 prefix_2">
-      <header class="grid_6 prefix_2 alpha omega meta sans light">
-        <div class="grid_2 alpha info">
-          publié le <%= date_tag(@article.created_at) %><br>
-          modifié le <%= date_tag(@article.updated_at) %>
-        </div>
-        <div class="grid_2 omega info">
-          considéré <a href="#">subtil</a>, <a href="#">divertissant</a>, <a href="#">transcendant</a><br>
-        </div>
-      </header>
-
       <header class="title">
         <h1><%= @article.display_title %></h1>
         <% if @article.subtitle? -%>
         <h2 class="sans"><%= @article.subtitle %></h2>
         <% end -%>
-        <div class="author sans light">par <%= link_to(@article.user.name, users_url(@article.user)) %></div>
+        <div class="author sans light">
+          par <%= link_to(@article.user.name, users_url(@article.user)) %>
+        </div>
+        <div class="date sans light">
+          <%= date_tag(@article.created_at) %> (modifié le <%= date_tag(@article.updated_at) %>)
+        </div>
       </header>
 
       <div class="grid_6 alpha body">

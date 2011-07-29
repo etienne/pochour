@@ -30,6 +30,10 @@ a:hover {
   padding: 3px 0 2px;
 }
 
+strong {
+  font-weight: bold;
+}
+
 /* Helper classes */
 
 .sans, label, input[type=submit] {
@@ -57,14 +61,14 @@ a:hover {
   clear: both;
 }
 
-.hidden_nojs {
+.hidden_nojs, .hide {
   display: none;
 }
 
 /* Sitewide elements */
 
 a#home_link {
-  position: absolute;
+  position: fixed;
   top: 178px;
   font-family: "Titillium";
   font-weight: bold;
