@@ -19,8 +19,7 @@ Feature: Manage login
   
   Scenario: Member logs out
     Given I am logged in
-    When I go to the home page
-    And I follow "Déconnectation"
+    When I log out
     Then I should be on the home page
     And I should see "Ciao."
     And I should see "Ça faut un compte pour écrire un article."

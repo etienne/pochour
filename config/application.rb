@@ -43,3 +43,8 @@ module Pochour
     I18n.default_locale = 'fr'
   end
 end
+
+FriendlyId.defaults do |config|
+  config.use :slugged, :reserved
+  config.reserved_words = %w(compte publier)
+end

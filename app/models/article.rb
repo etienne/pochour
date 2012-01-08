@@ -5,15 +5,11 @@ class Article < ActiveRecord::Base
   
   validates_presence_of :title, :body
   
-  has_friendly_id :title, :use_slug => true, :approximate_ascii => true
+  extend FriendlyId
+  friendly_id :title
   
   def normalize_friendly_id(string)
-    normalized_string = string.normalize_for!(friendly_id_config).to_s
-    if normalized_string.blank?
-      "sans-titre"
-    else
-      normalized_string
-    end
+    "sans-titre" if super.blank?
   end
   
   def display_title
