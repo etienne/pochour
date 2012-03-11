@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates_length_of :bio, :maximum => 600
   
   has_many :articles
-  
-  has_friendly_id :name, :use_slug => true, :approximate_ascii => true, :reserved_words => ["ecrire", "compte"]
-  
+    
+  extend FriendlyId
+  friendly_id :name
 end

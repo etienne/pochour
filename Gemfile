@@ -1,16 +1,16 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0rc4'
+gem "rails", "~> 3.2.0.rc1"
 gem 'rake'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem "devise", :git => "git://github.com/plataformatec/devise.git"
+gem "devise", "~> 2.0.0.rc"
 gem "cancan"
 # gem "friendly_id", "~> 3.2"
-gem "friendly_id", :git => "git://github.com/norman/friendly_id.git", :branch => "edge"
+gem "friendly_id", "~> 4.0.0"
 gem "simple_form"
 
 # Asset template engines  

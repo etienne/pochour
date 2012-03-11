@@ -11,7 +11,7 @@
       <nav>
         <ul>
           <li><%= link_to "Publier un nouvel article", new_article_path %></li>
-          <li><%= link_to 'Déconnectation', destroy_user_session_path %></li>
+          <li><%= link_to 'Déconnectation', destroy_user_session_path, method: :delete %></li>
         </ul>
       </nav>
     <% else %>

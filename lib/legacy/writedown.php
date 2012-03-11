@@ -10,8 +10,6 @@
 // +----------------------------------------------------------------------+
 //
 // $Id: Writedown.inc,v 0.54 2004/11/05 17:36:00 lis Exp $
-// 
-// Note: this version of the script (2011.02.20) is meant to be used solely as a shell script.
 
 /**
  * Writedown
@@ -173,10 +171,5 @@ class Writedown
 	}
 
 }
-
-// get contents of a file into a string
-$filename = $argv[1];
-$contents = file_get_contents($filename);
-print Writedown::Text2XHTML($contents);
 
 ?>
