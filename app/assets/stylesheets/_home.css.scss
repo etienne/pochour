@@ -1,4 +1,7 @@
 sidebar {
+  width: 207px;
+  float: right;
+  
   input.string, input.password {
     width: 100%;
   }
@@ -19,11 +22,10 @@ sidebar {
   }
 } 
 
-section.home {
+body.home {
   background: white url("bg_1.png") no-repeat top left fixed;
-  padding: 75px 0;
 }
 
-section.home.bg_2 {
+body.home.bg_2 {
   background-image: url("bg_2.png");
 }

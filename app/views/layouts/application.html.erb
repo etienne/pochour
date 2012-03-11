@@ -19,18 +19,27 @@
 
   </script>
 </head>
-<body class="<%= controller_name %>">
+<body class="<%= "#{controller_name} bg_#{[1,2].sample}" %>">
 
 <%= link_to("accueil", root_path, :id => "home_link") unless controller_name == "home" %>
 
-<div class="notice"><%= notice %></div>
-<div class="alert"><%= alert %></div>
+<% if content_for? :header -%>
+<header class="title">
+  <%= yield :header %>
+</header>
+<% end -%>
 
-<%= yield :before_content %>
+<section role="main" class="clearfix">
+  <div class="notice"><%= notice %></div>
+  <div class="alert"><%= alert %></div>
+  <%= yield  %>
+</section>
 
-<%= yield  %>
-
-<%= yield :after_content %>
+<% if content_for? :complementary -%>
+<section role="complementary" class="clearfix">
+  <%= yield :complementary %>
+</section>
+<% end -%>
 
 </body>
 </html>

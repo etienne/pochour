@@ -1,65 +1,29 @@
-<section class="article clearfix">
-  <div class="container_10">
-    <article class="grid_8 prefix_2">
-      <header class="meta sans light">
-        publié le <%= date_tag(@article.created_at) %>
-        <% if @article.created_at != @article.updated_at %><br>modifié le <%= date_tag(@article.updated_at) %><% end %>
-      </header>
-
-      <header class="title">
-        <h1><%= @article.display_title %></h1>
-        <% if @article.subtitle? -%>
-        <h2 class="sans"><%= @article.subtitle %></h2>
-        <% end -%>
-        <div class="author sans light">par <%= link_to(@article.user.name, users_url(@article.user)) %></div>
-      </header>
-
-      <div class="grid_6 alpha body">
-        <%= sanitize @article.body %>
-      </div>
-
-      <%= link_to("Modifier cet article", edit_user_article_url(@article.user, @article)) if can? :update, @article %>
-
-      <% if can? :create, Epithet -%>
-      <%= render 'epithet_form' %>
-      <% end %>
-
-      <div class="grid_4 prefix_2 suffix_2 bio lighter">
-        <%= link_to("Écrire une bio", edit_user_registration_url, :class => "hidden_nojs show_bio_form") %>
-      </div>
-    </article>
+<% content_for :header do %>
+  <div class="meta sans light">
+    publié le <%= date_tag(@article.created_at) %>
+    <% if @article.created_at != @article.updated_at %><br>modifié le <%= date_tag(@article.updated_at) %><% end %>
   </div>
-</section>
+  <h1><%= @article.display_title %></h1>
+  <% if @article.subtitle? -%>
+  <h2 class="sans"><%= @article.subtitle %></h2>
+  <% end -%>
+  <div class="author sans light">par <%= link_to(@article.user.name, users_url(@article.user)) %></div>
+<% end %>
 
-<section class="comments container_10 clearfix">
-  <div class="grid_6 prefix_2">
-    <h1 class="grid_8 alpha pull_1">
-      <% if @article.comments.count > 0 %>
-      <span class="count"><%= @article.comments.count %></span>
-      <% end %>
-      commentation<%= "s" unless @article.comments.count == 1 %>
-    </h1>
-    <% if @article.comments.blank? -%>
-    <p class="lighter">Aucune commentation n’a encore été écrite.</p>
-    <% else -%>
-    <dl class="comments">
-      <% @article.comments.each do |comment| -%>
-      <dt class="sans lighter">
-        <span class="user">
-        <% if user = comment.user -%>
-          <%= link_to(user.name, users_url(user)) %>
-        <% elsif !comment.author.blank? -%>
-          <%= comment.author %>
-        <% else -%>
-          Visiteur stupide et anonyme
-        <% end -%>
-        </span>
-        – <%= date_and_time_tag(comment.created_at) %>
-      </dt>
-      <dd><%= sanitize comment.comment %></dd>
-      <% end -%>
-    </dl>
-    <% end -%>
-    <% # render 'comment_form' %>
+<article>
+  <div class="body">
+    <%= sanitize @article.body %>
   </div>
-</section>
+
+  <%= link_to("Modifier cet article", edit_user_article_url(@article.user, @article)) if can? :update, @article %>
+
+  <% if can? :create, Epithet -%>
+  <%= render 'epithet_form' %>
+  <% end %>
+
+  <div class="bio lighter">
+    <%= link_to("Écrire une bio", edit_user_registration_url, :class => "hidden_nojs show_bio_form") %>
+  </div>
+</article>
+
+<%= render 'comments' %>

@@ -1,86 +1,23 @@
-/* Article lists */
-
-ul.articles {
-  position: relative;
-  width: 672px;
-  margin-left: 9px;
-  left: -17px;
-  top: -17px;
-  float: left;
-  background-color: white;
-  
-  > li {
-    position: relative;
-    width: 190px;
-    height: 190px;
-    margin-bottom: 24px;
-    padding: 12px 17px 12px 16px;
-    border-left: 1px solid $graystroke;
-    overflow: hidden;
-    float: left;
-    
-    &:hover {
-      background-color: #212428;
-      cursor: hand;
-      cursor: pointer;
-      border-left: 0;
-      padding-left: 17px;
-
-      .light {
-        color: rgba(255, 255, 255, 0.6);
-      }
-
-      a, div.author {
-        color: white;
-      }
-    }
-  }
-  
-  h1 {
-    font-size: 15px;
-    line-height: 22px;
-    
-    a {
-      font-weight: bold;
-    }
-  }
-  
-  div.body {
-    font-size: 13px;
-    line-height: 19px;
-  }
-  
-  div.meta {
-    position: absolute;
-    bottom: 12px;
-    font-size: 12px;
-    line-height: 19px;
-  }
-  
-  div.author {
-    font-weight: bold;
-/*  color: #212428;*/
-  }
-}
-
 /* Single articles */
 
 body.articles {
-  background: $lightgray url("footer.png") no-repeat bottom center;
-  
-  article div.body {
-    font-size: 16px;
-    line-height: 25px;
-    margin-bottom: 16px;
+  article {
+    width: 655px;
+
+    div.body {
+      font-size: 16px;
+      line-height: 25px;
+      margin-bottom: 16px;
     
-    p {
-      margin-bottom: 14px;
-    }
+      p {
+        margin-bottom: 14px;
+      }
     
-    h2 {
-      font-family: $sans;
-      font-weight: bold;
-      font-size: 18px;
+      h2 {
+        font-family: $sans;
+        font-weight: bold;
+        font-size: 18px;
+      }
     }
   }
 }
@@ -90,7 +27,9 @@ section.article {
   padding-bottom: 30px;
 }
 
-header.meta {
+header div.meta {
+  position: absolute;
+  top: 0;
   padding: 20px 0 17px;
   font-size: 12px;
   line-height: 19px;
@@ -98,7 +37,6 @@ header.meta {
 
 header.title {
   clear: left;
-  padding: 67px 0 40px;
   
   h1 {
     font-size: 61px;
@@ -126,6 +64,7 @@ div.pagination {
   float: left;
   clear: left;
   position: relative;
+  top: -24px;
   left: -17px;
   font-size: 12px;
   
@@ -135,6 +74,10 @@ div.pagination {
     float: left;
   }
   
+  span.disabled {
+    display: none;
+  }
+  
   :last-child {
     border-right: 1px solid $graystroke;
   }
@@ -142,7 +85,7 @@ div.pagination {
   em {
     font-weight: bold;
     font-style: normal;
-    background-color: $lightgray;
+    background-color: white;
   }
   
   a {

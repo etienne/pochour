@@ -1,0 +1,30 @@
+<% content_for :complementary do %>
+<h1>
+  <% if @article.comments.count > 0 %>
+  <span class="count"><%= @article.comments.count %></span>
+  <% end %>
+  commentation<%= "s" unless @article.comments.count == 1 %>
+</h1>
+<% if @article.comments.blank? -%>
+<p class="lighter">Aucune commentation n’a encore été écrite.</p>
+<% else -%>
+<dl class="comments">
+  <% @article.comments.each do |comment| -%>
+  <dt class="sans lighter">
+    <span class="user">
+    <% if user = comment.user -%>
+      <%= link_to(user.name, users_url(user)) %>
+    <% elsif !comment.author.blank? -%>
+      <%= comment.author %>
+    <% else -%>
+      Visiteur stupide et anonyme
+    <% end -%>
+    </span>
+    – <%= date_and_time_tag(comment.created_at) %>
+  </dt>
+  <dd><%= sanitize comment.comment %></dd>
+  <% end -%>
+</dl>
+<% end -%>
+<% # render 'comment_form' %>
+<% end %>

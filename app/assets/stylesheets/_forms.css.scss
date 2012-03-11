@@ -1,0 +1,53 @@
+/* Forms */
+
+form {
+  div.input {
+    margin-bottom: 8px;
+  }
+  
+  label {
+    font-size: 14px;
+    padding: 2px 0;
+    font-weight: bold;
+    display: block;
+    color: #40464b;
+  }
+  
+  input.string, textarea.text, input.password {
+    font: 14px/21px $serif;
+    padding: 2px;
+    border: 1px solid #D5D5D5;
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(33, 36, 40, 0.4);
+    }
+  }
+  
+  input[type=submit] {
+    border: 0;
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 8px;
+    padding: 5px 12px;
+    font-weight: bold;
+    background-color: #40464b;
+    color: white;
+    cursor: hand;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: $darkgray;
+  }
+  
+  div.check_box input {
+    position: relative;
+    top: -2px;
+  }
+  
+  div.check_box label {
+    margin-left: 4px;
+    display: inline;
+  }
+}
