@@ -6,7 +6,6 @@ class HomeController < ApplicationController
     @slogan = [
       "Des affaires.",
       "C’était vraiment long.",
-      "Trop peu, trop tard.",
       "Sans slogan depuis 1903.",
       "On s’y croirait.",
       "On travaille chaud.",
