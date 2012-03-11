@@ -8,7 +8,7 @@
         <% if article.abstract.blank? -%>
         <%= sanitize truncate_html(article.body, 80) %>
         <% else -%>
-        <%= sanitize article.abstract %>
+        <%= sanitize truncate_html(article.abstract, 80) %>
         <% end -%>
       </div>
       <div class="meta sans light">

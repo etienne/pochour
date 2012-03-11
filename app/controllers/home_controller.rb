@@ -2,7 +2,7 @@
 
 class HomeController < ApplicationController
   def index
-    @articles = Article.where(:draft => false).order("created_at DESC").limit(18)
+    @articles = Article.where(:draft => false).order("created_at DESC").limit(30)
     @slogan = [
       "Des affaires.",
       "C’était vraiment long.",

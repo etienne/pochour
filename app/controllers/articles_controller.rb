@@ -32,5 +32,6 @@ class ArticlesController < ApplicationController
   
   def show
     @article = Article.find(params[:id])
+    @title = "#{@article.title} par #{@article.user.name}"
   end
 end

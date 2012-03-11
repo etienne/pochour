@@ -8,9 +8,9 @@
 $(document).ready ->
   # Assign random color class to body
   colors = [
-    "91, 190, 113"  # Green
+    "64, 174, 89"  # Green
     "58, 154, 197"  # Blue
-    # "197, 195, 58"  # Yellow
+    "56, 161, 162"  # Cyan
     "197, 58, 106"  # Fuschia
     "112, 68, 62"   # Brown
   ]

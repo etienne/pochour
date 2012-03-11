@@ -6,5 +6,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @articles = @user.articles.where(:draft => false).order("created_at DESC")
+    @title = @user.name
   end
 end
