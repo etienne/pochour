@@ -6,7 +6,8 @@ gem 'rake'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'thin'
+gem 'pg'
 gem "devise"
 gem "cancan"
 gem "friendly_id", "~> 4.0.1"
@@ -53,9 +54,5 @@ group :test do
   gem 'cucumber'
   gem 'launchy'
   gem 'factory_girl_rails'
-end
-
-group :production do
-  gem 'thin'
-  gem 'pg'
+  gem 'colored'
 end

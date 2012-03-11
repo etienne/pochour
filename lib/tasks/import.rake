@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require "nokogiri"
+require "colored"
 
 namespace :import do
   def hashes_from_xml(file_path, table)
@@ -60,11 +61,11 @@ namespace :import do
       u.admin = true if user[:status] == "admin"
       u.created_at = Time.parse(user[:registered])
       if u.valid?
-        print '.'
+        print '.'.green
         u.save!
       else
         invalid_users << u
-        print 'E'
+        print 'E'.red
       end
     end
     import_results("users", invalid_users, [:id, :name])
@@ -93,11 +94,11 @@ namespace :import do
       a.created_at = DateTime.parse(article[:date])
       a.updated_at = DateTime.parse(article[:datemodified]) unless (article[:datemodified] == "0000-00-00 00:00:00" || article[:datemodified].blank?)
       a.updated_at ||= a.created_at
-      if a.valid?
-        print '.'
+      begin
         a.save!
-      else
-        print 'E'
+        print '.'.green
+      rescue
+        print 'E'.red
         invalid_articles << a
       end
     end
@@ -125,14 +126,14 @@ namespace :import do
       c.article_id = comment[:article]
       c.created_at = DateTime.parse(comment[:date])
       if c.valid?
-        print '.'
+        print '.'.green
         c.save!
       else
-        print 'E'
+        print 'E'.red
         invalid_comments << c
       end
-      import_results("comments", invalid_comments, [:id, :user_id])
     end
+    import_results("comments", invalid_comments, [:id, :user_id])
   end
   
   desc "Import all data from legacy database"
