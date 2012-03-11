@@ -5,9 +5,12 @@
  *= require_tree .
 */
 
+$serif: "Noticia Text", Georgia, "Droid Serif", serif;
+$darkgray: #212428;
+
 body {
-  font: 14px/21px "Noticia Text", Georgia, "Droid Serif", serif;
-  color: #212428;
+  font: 14px/21px $serif;
+  color: $darkgray;
   background-color: white;
   padding: 0;
   margin: 0;
@@ -18,14 +21,14 @@ ul {
 }
 
 a {
-  color: #212428;
+  color: $darkgray;
   text-decoration: none;
   border-bottom: 1px solid rgba(33, 36, 40, 0.2);
 }
 
 a:hover {
   color: white;
-  background-color: #212428;
+  background-color: $darkgray;
   border: 0;
   padding: 3px 0 2px;
 }
@@ -64,7 +67,7 @@ a:hover {
 /* Sitewide elements */
 
 a#home_link {
-  position: absolute;
+  position: fixed;
   top: 178px;
   font-family: "Titillium";
   font-weight: bold;
@@ -73,6 +76,11 @@ a#home_link {
   line-height: 34px;
   border: 0;
   z-index: 100;
+  color: white;
+}
+
+a#home_link:hover {
+  background-color: $darkgray;
 }
 
 /* Forms */
@@ -91,7 +99,7 @@ form {
   }
   
   input.string, textarea.text, input.password {
-    font: 14px/21px Georgia, "Droid Serif", serif;
+    font: 14px/21px $serif;
     padding: 2px;
     border: 1px solid #D5D5D5;
     
@@ -115,7 +123,7 @@ form {
   }
   
   input[type=submit]:hover {
-    background-color: #212428;
+    background-color: $darkgray;
   }
   
   div.check_box input {

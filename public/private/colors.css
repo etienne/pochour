@@ -3,6 +3,7 @@ a {
   border-bottom-color: rgba(COLOR, 0.2);
 }
 
+a#home_link,
 a:hover,
 ul.articles li:hover,
 input[type=submit]:hover {

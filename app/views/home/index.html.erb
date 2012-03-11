@@ -2,7 +2,7 @@
   <div class="container_10">
     <header class="grid_8 prefix_2 title">
       <h1>Pochour.com</h1>
-      <h2 class="sans">Des affaires.</h2>
+      <h2 class="sans"><%= @slogan %></h2>
     </header>
     
     <sidebar class="grid_2 push_8 sans">
@@ -15,7 +15,10 @@
         </ul>
       </nav>
     <% else %>
-      <%= render :partial => 'shared/login_form' %>
+      <div class="note">
+        Bientôt avec des affaires.
+      </div>
+      <% # render :partial => 'shared/login_form' %>
     <% end %>
     </sidebar>
 

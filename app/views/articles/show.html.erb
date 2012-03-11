@@ -1,14 +1,9 @@
 <section class="article clearfix">
   <div class="container_10">
     <article class="grid_8 prefix_2">
-      <header class="grid_6 prefix_2 alpha omega meta sans light">
-        <div class="grid_2 alpha info">
-          publié le <%= date_tag(@article.created_at) %><br>
-          modifié le <%= date_tag(@article.updated_at) %>
-        </div>
-        <div class="grid_2 omega info">
-          considéré <a href="#">subtil</a>, <a href="#">divertissant</a>, <a href="#">transcendant</a><br>
-        </div>
+      <header class="meta sans light">
+        publié le <%= date_tag(@article.created_at) %><br>
+        modifié le <%= date_tag(@article.updated_at) %>
       </header>
 
       <header class="title">
@@ -65,6 +60,6 @@
       <% end -%>
     </dl>
     <% end -%>
-    <%= render 'comment_form' %>
+    <% # render 'comment_form' %>
   </div>
 </section>
