@@ -20,6 +20,10 @@ sidebar {
 } 
 
 section.home {
-  background: white url("dessin_bg.png") no-repeat top left;
+  background: white url("bg_1.png") no-repeat top left fixed;
   padding: 75px 0;
+}
+
+section.home.bg_2 {
+  background-image: url("bg_2.png");
 }
