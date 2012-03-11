@@ -131,7 +131,7 @@ namespace :import do
         print 'E'
         invalid_comments << c
       end
-      import_results("comments", invalid_comments, :id, :user_id)
+      import_results("comments", invalid_comments, [:id, :user_id])
     end
   end
   
