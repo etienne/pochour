@@ -13,6 +13,7 @@ gem "cancan"
 gem "friendly_id", "~> 4.0.1"
 gem "simple_form"
 gem 'will_paginate', '~> 3.0'
+gem 'colored'
 
 # Asset template engines  
 group :assets do
@@ -54,5 +55,4 @@ group :test do
   gem 'cucumber'
   gem 'launchy'
   gem 'factory_girl_rails'
-  gem 'colored'
 end
