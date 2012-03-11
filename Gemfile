@@ -54,3 +54,8 @@ group :test do
   gem 'launchy'
   gem 'factory_girl_rails'
 end
+
+group :production do
+  gem 'thin'
+  gem 'pg'
+end
