@@ -1,22 +1,26 @@
 source 'http://rubygems.org'
 
-gem "rails", "~> 3.2.0.rc1"
+gem 'rails', '3.2.0'
 gem 'rake'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem "devise", "~> 2.0.0.rc"
+gem "devise"
 gem "cancan"
-# gem "friendly_id", "~> 3.2"
-gem "friendly_id", "~> 4.0.0"
+gem "friendly_id", "~> 4.0.1"
 gem "simple_form"
 
 # Asset template engines  
-gem 'sass'  
-gem 'coffee-script'  
-gem 'uglifier'  
+group :assets do
+  gem 'sass-rails',   :git => 'git://github.com/rails/sass-rails.git', :branch => '3-2-stable'
+  gem 'coffee-rails', :git => 'git://github.com/rails/coffee-rails.git', :branch => '3-2-stable'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer'
+  gem 'uglifier', '>= 1.0.3'
+end
   
 gem 'jquery-rails'  
 
@@ -37,7 +41,7 @@ gem 'nokogiri'
 # Bundle gems for certain environments:
 
 group :test, :development do
-  gem 'rspec-rails', :git => "git://github.com/rspec/rspec-rails.git"
+  gem "rspec-rails", "~> 2.6"
 end
 
 group :test do

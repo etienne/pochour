@@ -114,10 +114,11 @@ fr:
   
   simple_form:
     labels:
-      author: 'Nom'
-      comment: 'Commentation'
-      email: 'Courriel'
-      password: 'Mot de passe'
+      defaults:
+        author: 'Nom'
+        comment: 'Commentation'
+        email: 'Courriel'
+        password: 'Mot de passe'
 
   helpers:
     submit:
