@@ -1,12 +1,16 @@
-/*
- *= require reset
- *= require grid
- *= require_self
- *= require_tree .
-*/
-
 $serif: "Noticia Text", Georgia, "Droid Serif", serif;
+$sans: "Titillium", Arial, Verdana, sans-serif;
 $darkgray: #212428;
+$lightgray: #f9f9f9;
+$graystroke: #eaebeb;
+
+
+@import "reset";
+@import "grid";
+@import "comments";
+@import "articles";
+@import "home";
+@import "fonts";
 
 body {
   font: 14px/21px $serif;
@@ -36,7 +40,7 @@ a:hover {
 /* Helper classes */
 
 .sans, label, input[type=submit] {
-  font-family: "Titillium";
+  font-family: $sans;
 }
 
 .light {
@@ -69,7 +73,7 @@ a:hover {
 a#home_link {
   position: fixed;
   top: 178px;
-  font-family: "Titillium";
+  font-family: $sans;
   font-weight: bold;
   font-size: 16px;
   padding: 0 17px;

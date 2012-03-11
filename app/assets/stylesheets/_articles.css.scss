@@ -15,7 +15,8 @@ ul.articles {
     height: 190px;
     margin-bottom: 24px;
     padding: 12px 17px 12px 16px;
-    border-left: 1px solid #eaebeb;
+    border-left: 1px solid $graystroke;
+    overflow: hidden;
     float: left;
     
     &:hover {
@@ -65,7 +66,7 @@ ul.articles {
 /* Single articles */
 
 body.articles {
-  background-color: #f9f9f9;
+  background-color: $lightgray;
   
   article div.body {
     font-size: 16px;
@@ -74,6 +75,12 @@ body.articles {
     
     p {
       margin-bottom: 14px;
+    }
+    
+    h2 {
+      font-family: $sans;
+      font-weight: bold;
+      font-size: 18px;
     }
   }
 }
@@ -141,5 +148,35 @@ section.comments {
       width: 479px;
       height: 130px;
     }
+  }
+}
+
+/* Pagination */
+
+div.pagination {
+  float: left;
+  clear: left;
+  position: relative;
+  left: -17px;
+  font-size: 12px;
+  
+  em, span, a {
+    border-left: 1px solid $graystroke;
+    padding: 8px 16px;
+    float: left;
+  }
+  
+  :last-child {
+    border-right: 1px solid $graystroke;
+  }
+  
+  em {
+    font-weight: bold;
+    font-style: normal;
+    background-color: $lightgray;
+  }
+  
+  a {
+    border-bottom: 0;
   }
 }
