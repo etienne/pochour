@@ -17,7 +17,8 @@ Pochour::Application.routes.draw do
     #     resources :comments
     #   end
     # end
-
+    
+    get "accueil/page/:page" => "home#index"
     get "publier" => 'articles#new', :as => :new_article
     post "publier" => 'articles#create', :as => :articles
     get ":user_id" => 'users#show', :as => :users

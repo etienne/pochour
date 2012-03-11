@@ -8,10 +8,6 @@ class Article < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title
   
-  def normalize_friendly_id(string)
-    "sans-titre" if super.blank?
-  end
-  
   def display_title
     title.split(/\s?:\s?/, 2).first
   end
