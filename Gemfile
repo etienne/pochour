@@ -11,6 +11,7 @@ gem "devise"
 gem "cancan"
 gem "friendly_id", "~> 4.0.1"
 gem "simple_form"
+gem 'will_paginate', '~> 3.0'
 
 # Asset template engines  
 group :assets do

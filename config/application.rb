@@ -52,5 +52,5 @@ end
 
 FriendlyId.defaults do |config|
   config.use :slugged, :reserved
-  config.reserved_words = %w(compte publier)
+  config.reserved_words = %w(compte publier accueil)
 end
