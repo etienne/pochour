@@ -1,5 +1,36 @@
 /* Comments */
 
+section.comments {
+  padding: 24px 0 350px;
+  
+  h1 {
+    font-size: 48px;
+    line-height: 56px;
+    margin-bottom: 20px;
+    
+    span.count {
+      position: absolute;
+      left: -112px;
+      width: 95px;
+      text-align: right;
+      color: #b0b5b9;
+    }
+  }
+  
+  form {
+    margin-top: 40px;
+    
+    input.string {
+      width: 479px;
+    }
+    
+    textarea.text {
+      width: 479px;
+      height: 130px;
+    }
+  }
+}
+
 dl.comments {
   
   line-height: 21px;

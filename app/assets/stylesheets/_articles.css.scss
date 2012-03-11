@@ -66,7 +66,7 @@ ul.articles {
 /* Single articles */
 
 body.articles {
-  background-color: $lightgray;
+  background: $lightgray url("footer.png") no-repeat bottom center;
   
   article div.body {
     font-size: 16px;
@@ -117,37 +117,6 @@ header.title {
   div.author {
     padding-top: 14px;
     font-size: 15px;
-  }
-}
-
-section.comments {
-  padding: 24px 0 75px;
-  
-  h1 {
-    font-size: 48px;
-    line-height: 56px;
-    margin-bottom: 20px;
-    
-    span.count {
-      position: absolute;
-      left: -112px;
-      width: 95px;
-      text-align: right;
-      color: #b0b5b9;
-    }
-  }
-  
-  form {
-    margin-top: 40px;
-    
-    input.string {
-      width: 479px;
-    }
-    
-    textarea.text {
-      width: 479px;
-      height: 130px;
-    }
   }
 }
 
