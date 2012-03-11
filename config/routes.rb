@@ -21,7 +21,7 @@ Pochour::Application.routes.draw do
     get "accueil/page/:page" => "home#index"
     get "publier" => 'articles#new', :as => :new_article
     post "publier" => 'articles#create', :as => :articles
-    get ":user_id" => 'users#show', :as => :users
+    get ":user_id(/page/:page)" => 'users#show', :as => :users
     get ":user_id/:id" => 'articles#show', :as => :user_article
     put ":user_id/:id" => 'articles#update', :as => :user_article
     get ":user_id/:id/modifier" => 'articles#edit', :as => :edit_user_article
