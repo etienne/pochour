@@ -2,8 +2,8 @@
   <div class="container_10">
     <article class="grid_8 prefix_2">
       <header class="meta sans light">
-        publié le <%= date_tag(@article.created_at) %><br>
-        modifié le <%= date_tag(@article.updated_at) %>
+        publié le <%= date_tag(@article.created_at) %>
+        <% if @article.created_at != @article.updated_at %><br>modifié le <%= date_tag(@article.updated_at) %><% end %>
       </header>
 
       <header class="title">
