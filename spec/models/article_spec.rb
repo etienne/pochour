@@ -46,6 +46,13 @@ describe Article do
     end
   end
   
+  context "with a sluggable title" do
+    it "properly generates the slug" do
+      article = Factory(:article, :title => "My really cool title!")
+      article.friendly_id.should eq "my-really-cool-title"
+    end
+  end
+  
   context "with an unsluggable title" do
     it "uses a generic slug" do
       article = Factory(:article, :title => "(...)")
