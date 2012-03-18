@@ -14,5 +14,6 @@ class HomeController < ApplicationController
       "Malade.",
       "Fais-le vous-même."
     ].sample
+    @users = User.order('slug ASC').all
   end
 end

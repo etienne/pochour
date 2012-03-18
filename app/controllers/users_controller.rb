@@ -8,4 +8,8 @@ class UsersController < ApplicationController
     @articles = @user.articles.where(:draft => false).page(params[:page]).order("created_at DESC")
     @title = @user.name
   end
+  
+  def find
+    redirect_to user_path(User.find(params[:user][:id]))
+  end
 end

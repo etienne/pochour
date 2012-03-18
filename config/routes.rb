@@ -21,12 +21,13 @@ Pochour::Application.routes.draw do
     get "accueil/page/:page" => "home#index"
     get "publier" => 'articles#new', :as => :new_article
     post "publier" => 'articles#create', :as => :articles
-    get ":user_id(/page/:page)" => 'users#show', :as => :users
+    get ":user_id(/page/:page)" => 'users#show', :as => :user
     get ":user_id/:id" => 'articles#show', :as => :user_article
     put ":user_id/:id" => 'articles#update', :as => :user_article
     get ":user_id/:id/modifier" => 'articles#edit', :as => :edit_user_article
     post ":user_id/:article_id/commentation" => 'comments#create', :as => :user_article_comments
     post ":user_id/:article_id/epithete" => 'epithets#create', :as => :user_article_epithets
+    post 'recherche/membre' => 'users#find', as: :find_user
   end
   
   

@@ -3,6 +3,7 @@ Feature: Assign epithets to articles
   As a member
   I want to be able to tag articles with epithets
   
+  @ignore
   Scenario: Member assigns a new epithet to an article
     Given I am logged in
     And there is an article titled "Bouettisme"
@@ -13,7 +14,7 @@ Feature: Assign epithets to articles
     And I should not see "trop cool"
     And I should see "Vous êtes la première personne à utiliser cet épithète."
     
-  @wip
+  @wip @ignore
   Scenario: Member assigns an existing epithet to an article
     Given I am logged in
     And there is an article titled "Bouettisme"

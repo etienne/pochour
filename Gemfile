@@ -17,8 +17,8 @@ gem 'colored'
 
 # Asset template engines  
 group :assets do
-  gem 'sass-rails',   :git => 'git://github.com/rails/sass-rails.git', :branch => '3-2-stable'
-  gem 'coffee-rails', :git => 'git://github.com/rails/coffee-rails.git', :branch => '3-2-stable'
+  gem 'sass-rails',   git: 'git://github.com/rails/sass-rails.git', branch: '3-2-stable'
+  gem 'coffee-rails', git: 'git://github.com/rails/coffee-rails.git', branch: '3-2-stable'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
@@ -51,8 +51,7 @@ group :test do
   gem "shoulda-matchers"
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'cucumber-rails'
-  gem 'cucumber'
+  gem 'cucumber-rails', require: false
   gem 'launchy'
   gem 'factory_girl_rails'
 end

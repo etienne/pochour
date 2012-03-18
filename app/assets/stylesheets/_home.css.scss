@@ -20,6 +20,12 @@ sidebar {
     padding: 8px 16px;
     background-color: #f8f3d3;
   }
+  
+  form#find_user {
+    select {
+      width: 100%;
+    }
+  }
 } 
 
 body.home {

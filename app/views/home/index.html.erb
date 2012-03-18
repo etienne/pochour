@@ -4,20 +4,24 @@
 <% end %>
 
 <sidebar class="sans">
-<% if user_signed_in? %>
-  Salut <strong><%= current_user.name %></strong>.
-  <nav>
-    <ul>
-      <li><%= link_to "Publier un nouvel article", new_article_path %></li>
-      <li><%= link_to 'Déconnectation', destroy_user_session_path, method: :delete %></li>
-    </ul>
-  </nav>
-<% else %>
-  <div class="note">
-    Il manque des affaires. Ça s’en vient.
-  </div>
-  <% # render :partial => 'shared/login_form' %>
-<% end %>
+  <% if user_signed_in? %>
+    Salut <strong><%= current_user.name %></strong>.
+    <nav>
+      <ul>
+        <li><%= link_to "Publier un nouvel article", new_article_path %></li>
+        <li><%= link_to 'Déconnectation', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </nav>
+  <% else %>
+    <div class="note">
+      Il manque des affaires. Ça s’en vient.
+    </div>
+    <% # render :partial => 'shared/login_form' %>
+  <% end %>
+  <%= form_for(:user, url: find_user_path, html: {id: 'find_user'}) do |f| %>
+    <%= collection_select(:user, :id, @users, :id, :name, {include_blank: true}, 'data-placeholder' =>  "Articles par auteur") %>
+    <%= f.submit "Voir les articles" %>
+  <% end %>
 </sidebar>
 
 <%= render :partial => 'shared/articles_grid', :locals => { :articles => @articles, :show_author_names => true } %>

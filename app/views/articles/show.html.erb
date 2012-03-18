@@ -7,7 +7,7 @@
   <% if @article.subtitle? -%>
   <h2 class="sans"><%= @article.subtitle %></h2>
   <% end -%>
-  <div class="author sans light">par <%= link_to(@article.user.name, users_url(@article.user)) %></div>
+  <div class="author sans light">par <%= link_to(@article.user.name, user_url(@article.user)) %></div>
 <% end %>
 
 <article>

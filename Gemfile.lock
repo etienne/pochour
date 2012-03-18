@@ -197,7 +197,6 @@ DEPENDENCIES
   capybara
   coffee-rails!
   colored
-  cucumber
   cucumber-rails
   database_cleaner
   devise

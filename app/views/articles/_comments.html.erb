@@ -13,7 +13,7 @@
   <dt class="sans lighter">
     <span class="user">
     <% if user = comment.user -%>
-      <%= link_to(user.name, users_url(user)) %>
+      <%= link_to(user.name, user_url(user)) %>
     <% elsif !comment.author.blank? -%>
       <%= comment.author %>
     <% else -%>

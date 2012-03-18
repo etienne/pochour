@@ -53,5 +53,5 @@ end
 
 FriendlyId.defaults do |config|
   config.use :slugged, :reserved
-  config.reserved_words = %w(compte publier accueil page assets)
+  config.reserved_words = %w(compte publier accueil page assets recherche)
 end

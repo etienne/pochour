@@ -15,7 +15,9 @@ module NavigationHelpers
     when /^the article page "([^"]*)"$/
       article = Article.find_by_title($1)
       user_article_path(article.user, article)
-      
+    when /^the user page "([^"]*)"$/
+      user = User.find_by_name($1)
+      user_path(user)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
