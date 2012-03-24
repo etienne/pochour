@@ -7,3 +7,4 @@ db/legacy/*
 log/*.log
 tmp/**/*
 .sass-cache/*
+public/article/*
