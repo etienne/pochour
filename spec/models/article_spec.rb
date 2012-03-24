@@ -12,7 +12,7 @@ describe Article do
   
   context "with no subtitle" do
     before do
-      @article = Factory(:article, :title => "Salut les jeune")
+      @article = FactoryGirl.create(:article, :title => "Salut les jeune")
     end
 
     it "returns its full title when sent #display_title" do
@@ -30,7 +30,7 @@ describe Article do
   
   context "with a subtitle" do
     before do
-      @article = Factory(:article, :title => "Salut les jeune: un article fucked up: vraiment")
+      @article = FactoryGirl.create(:article, :title => "Salut les jeune: un article fucked up: vraiment")
     end
     
     it "returns only the title when sent #display_title" do
@@ -48,14 +48,14 @@ describe Article do
   
   context "with a sluggable title" do
     it "properly generates the slug" do
-      article = Factory(:article, :title => "My really cool title!")
+      article = FactoryGirl.create(:article, :title => "My really cool title!")
       article.friendly_id.should eq "my-really-cool-title"
     end
   end
   
   context "with an unsluggable title" do
     it "uses a generic slug" do
-      article = Factory(:article, :title => "(...)")
+      article = FactoryGirl.create(:article, :title => "(...)")
       article.friendly_id.should eq("sans-titre")
     end
   end

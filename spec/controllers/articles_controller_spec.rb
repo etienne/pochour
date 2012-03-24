@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe ArticlesController do
   before do
-    @user = Factory(:user)
-    @article = Factory(:article, :user => @user)
+    @user = FactoryGirl.create(:user)
+    @article = FactoryGirl.create(:article, :user => @user)
   end
   
   context "GET show" do

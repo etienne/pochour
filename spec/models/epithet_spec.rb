@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Epithet do
   before do
-    Factory(:epithet)
+    FactoryGirl.create(:epithet)
   end
   
   it { should have_many(:epithet_votes) }

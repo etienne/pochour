@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
   before do
-    Factory(:user)
+    FactoryGirl.create(:user)
   end
   
   it { should have_many :articles }
@@ -16,13 +16,13 @@ describe User do
   
   context "with role member" do
     before do
-      @user = Factory(:user)
+      @user = FactoryGirl.create(:user)
     end
     
     it "is able to update articles that they own" do
       ability = Ability.new(@user)
-      ability.can?(:update, Factory(:article, :user => @user)).should be_true
-      ability.cannot?(:update, Factory(:article)).should be_true
+      ability.can?(:update, FactoryGirl.create(:article, :user => @user)).should be_true
+      ability.cannot?(:update, FactoryGirl.create(:article)).should be_true
     end
   end
 end

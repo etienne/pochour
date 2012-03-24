@@ -94,6 +94,12 @@ namespace :import do
       a.created_at = DateTime.parse(article[:date])
       a.updated_at = DateTime.parse(article[:datemodified]) unless (article[:datemodified] == "0000-00-00 00:00:00" || article[:datemodified].blank?)
       a.updated_at ||= a.created_at
+      if article[:type] == 'image'
+        file = File.join(['db', 'legacy', 'files', "#{article[:id]}.jpg"])
+        if File.exists? file
+          a.image = File.open(file)
+        end
+      end
       begin
         a.save!
         print '.'.green

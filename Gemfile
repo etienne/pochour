@@ -14,6 +14,9 @@ gem "friendly_id", "~> 4.0.1"
 gem "simple_form"
 gem 'will_paginate', '~> 3.0'
 gem 'colored'
+gem 'carrierwave'
+gem 'fog'
+gem 'rmagick'
 
 # Asset template engines  
 group :assets do
@@ -53,5 +56,5 @@ group :test do
   gem 'database_cleaner'
   gem 'cucumber-rails', require: false
   gem 'launchy'
-  gem 'factory_girl_rails'
+  gem "factory_girl_rails", "~> 2.0"
 end

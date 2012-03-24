@@ -1,14 +1,14 @@
 # encoding: UTF-8
 
 Given /^I have one\s+user "([^\"]*)" with email "([^\"]*)" and password "([^\"]*)"$/ do |name, email, password|
-  Factory(:user, {
+  FactoryGirl.create(:user, {
     :email => email,
     :name => name,
     :password => password})
 end
 
 Given /^I am logged in$/ do
-  user = Factory(:user)
+  user = FactoryGirl.create(:user)
   step %{I log in with email "#{user.email}" and password "#{user.password}"}
 end
 
@@ -20,9 +20,9 @@ end
 Given /^I am logged in as an? (.*)$/ do |role|
   case role
   when "administrator"
-    user = Factory(:admin)
+    user = FactoryGirl.create(:admin)
   when "user"
-    user = Factory(:user)
+    user = FactoryGirl.create(:user)
   end
   step %{I log in with email "#{user.email}" and password "#{user.password}"}
 end
@@ -35,7 +35,7 @@ Given /^I log in with email "([^"]*)" and password "([^"]*)"$/ do |email, passwo
 end
 
 Given /^I am logged in as "([^"]*)"$/ do |name|
-  user = Factory(:user, :name => name)
+  user = FactoryGirl.create(:user, :name => name)
   step %{I log in with email "#{user.email}" and password "#{user.password}"}
 end
 

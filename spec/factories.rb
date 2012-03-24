@@ -1,39 +1,42 @@
 # encoding: UTF-8
 
-Factory.sequence :name do |n|
-  "Steve Fields #{n}"
+FactoryGirl.define do
+  sequence :name do |n|
+    "Steve Fields #{n}"
+  end
+
+  sequence :email do |n|
+    "roger#{n}@example.com"
+  end
+
+  factory :user do
+    name
+    email
+    password 'fieldsfields'
+    admin false
+  end
+
+  factory :admin, :class => 'user' do
+    name
+    email
+    password 'jesusjesus'
+    admin true
+  end
+
+  factory :article do
+    title "Trop malade ton titre"
+    body "Fucké raide là"
+    draft false
+    user
+  end
+
+  factory :comment do
+    comment "Some random comment"
+  end
+
+  factory :epithet do
+    name "fucked up"
+    approved true
+  end
 end
 
-Factory.sequence :email do |n|
-  "roger#{n}@example.com"
-end
-
-Factory.define :user do |u|
-  u.name { Factory.next(:name) }
-  u.email { Factory.next(:email) }
-  u.password 'fieldsfields'
-  u.admin false
-end
-
-Factory.define :admin, :class => User do |a|
-  a.name { Factory.next(:name) }
-  a.email { Factory.next(:email) }
-  a.password 'jesusjesus'
-  a.admin true
-end
-
-Factory.define :article do |a|
-  a.title "Trop malade ton titre"
-  a.body "Fucké raide là"
-  a.draft false
-  a.association :user
-end
-
-Factory.define :comment do |c|
-  c.comment "Some random comment"
-end
-
-Factory.define :epithet do |e|
-  e.name "fucked up"
-  e.approved true
-end

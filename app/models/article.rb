@@ -5,6 +5,8 @@ class Article < ActiveRecord::Base
   
   validates_presence_of :title, :body
   
+  mount_uploader :image, ImageUploader
+  
   extend FriendlyId
   friendly_id :title
   
