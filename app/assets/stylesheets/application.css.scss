@@ -1,7 +1,7 @@
 $serif: "Noticia Text", Georgia, "Droid Serif", serif;
 $sans: "Titillium", Arial, Verdana, sans-serif;
 $darkgray: #212428;
-$lightgray: #f9f9f9;
+$lightgray: #f4f4f4;
 $graystroke: #eaebeb;
 
 @import "reset";
@@ -106,5 +106,6 @@ section[role=main] {
 
 section[role=complementary] {
   background-color: $lightgray;
+	background-color: rgba(230,230,230,0.5);
   padding: 24px 0 48px 241px;
 }

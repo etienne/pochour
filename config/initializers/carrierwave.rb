@@ -1,5 +1,6 @@
 CarrierWave.configure do |config|
   if Rails.env.production? or Rails.env.development?
+    config.storage = :fog
     config.fog_credentials = {
       :provider               => 'AWS',
       :aws_access_key_id      => ENV['POCHOUR_S3_ACCESS_KEY'],

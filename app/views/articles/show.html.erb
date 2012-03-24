@@ -12,6 +12,11 @@
 
 <article>
   <div class="body">
+    <% unless @article.image.blank? -%>
+    <div class="image">
+      <%= image_tag(@article.image.main, alt: @article.display_title) %>
+    </div>
+    <% end -%>
     <%= sanitize @article.body %>
   </div>
 

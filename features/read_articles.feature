@@ -38,3 +38,18 @@ Feature: Read articles
     And I should not see "Comment voyager avec une truite"
     And I should not see "La vengeance de la patate chaude"
     And I should not see "Roger Sansfaçon" within the list of articles
+
+  Scenario: View article with an image
+    Given there is an article titled "I am imageful"
+    And article "I am imageful" has an image attached
+    When I go to the article page "I am imageful"
+    Then I should see an image at the top of the article
+  
+  Scenario: View article without an image
+    Given there is an article titled "I am not imageful"
+    When I go to the article page "I am not imageful"
+    Then I should not see an image at the top of the article
+  
+  
+  
+  

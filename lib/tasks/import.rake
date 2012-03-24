@@ -83,7 +83,7 @@ namespace :import do
       a.id = article[:id]
       a.title = article[:title].blank? ? "(Sans titre)" : format_text(article[:title])
       a.title << " : " << format_text(article[:subtitle]) unless article[:subtitle].blank?
-      a.user_id = article[:author]
+      a.user_id = article[:author] unless article[:author].blank?
       a.draft = article[:draft]
       if article[:text].blank?
         a.body = " "
