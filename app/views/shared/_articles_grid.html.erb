@@ -17,6 +17,9 @@
         <% end -%>
         <%= date_tag article.created_at %>
       </div>
+      <% unless article.image.blank? %>
+        <%= image_tag(article.image.thumb, alt: article.display_title ) %>
+      <% end %>
     </article>
   </li>
   <% end %>

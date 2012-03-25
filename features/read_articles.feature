@@ -38,7 +38,22 @@ Feature: Read articles
     And I should not see "Comment voyager avec une truite"
     And I should not see "La vengeance de la patate chaude"
     And I should not see "Roger Sansfaçon" within the list of articles
-
+  
+  # Scenario: Article displays abstract
+  #   Given the following article exists:
+# | Title               | Abstract               |
+# | Trop cool ton titre | Trop cool ton abstract |
+  #   When I go to the article page "Trop cool ton titre"
+  #   Then I should see "Trop cool ton abstract"
+  
+  Scenario: Article displays author bio
+    Given the following user exists:
+      | Name     | Bio                           |
+      | Roger B. | Le gars qui trippe des walls. |
+    And there is an article titled "Je trippe des walls" with author "Roger B."
+    When I go to the article page "Je trippe des walls"
+    Then I should see "Le gars qui trippe des walls"
+  
   Scenario: View article with an image
     Given there is an article titled "I am imageful"
     And article "I am imageful" has an image attached

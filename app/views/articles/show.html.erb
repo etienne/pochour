@@ -27,7 +27,8 @@
   <% end %>
 
   <div class="bio lighter">
-    <%= link_to("Écrire une bio", edit_user_registration_url, :class => "hidden_nojs show_bio_form") %>
+    <%= @article.user.bio unless @article.user.bio.blank? %>
+    <% # link_to("Écrire une bio", edit_user_registration_url, :class => "hidden_nojs show_bio_form") %>
   </div>
 </article>
 

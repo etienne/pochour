@@ -12,7 +12,7 @@ module TextHelper
     algorithms = []
     algorithms << doc.css('p').first                                     # First paragraph
     algorithms << n.parse(text.split(%r|<br\s?/?>|)[0..2].join("<br>"))  # First 3 line breaks
-    algorithms << n.parse(text.split(/\.[\s<]/).first + ".")             # First sentence
+    algorithms << n.parse(text.gsub(/^([^\.]*\.)/).first)                # First sentence
     algorithms << doc.truncate((ideal_length * 1.3).round)               # Truncated string
     algorithms << doc                                                    # Original full text
     algorithms.each do |fragment|

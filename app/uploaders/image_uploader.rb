@@ -27,6 +27,15 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process :resize_to_fill => [224, 214]
+    process :convert_to_grayscale
+  end
+  
+  def convert_to_grayscale
+    manipulate! do |img|
+      img.quantize(256, Magick::GRAYColorspace)
+      # img = yield(img) if block_given?
+      # img
+    end
   end
   
   # Add a white list of extensions which are allowed to be uploaded.

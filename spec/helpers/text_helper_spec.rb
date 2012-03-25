@@ -27,5 +27,13 @@ describe TextHelper do
     it "returns the original text" do
       truncate_html("Fucké raide là", 14).should eq("Fucké raide là")
     end
+    
+    it "returns the original HTML" do
+      truncate_html("<p>Je trippe!</p>", 80).should eq("<p>Je trippe!</p>")
+    end
+    
+    it "translates entities to proper accents" do
+      truncate_html("<p>J&eacute;sus t&rsquo;aime!</p>", 80).should eq("<p>Jésus t’aime!</p>")
+    end
   end
 end

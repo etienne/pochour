@@ -17,7 +17,38 @@ ul.articles {
     border-left: 1px solid $graystroke;
     overflow: hidden;
     float: left;
+
+	  h1 {
+	    font-size: 15px;
+	    line-height: 22px;
+
+	    a {
+	      font-weight: bold;
+	    }
+	  }
+
+	  div.body {
+	    font-size: 13px;
+	    line-height: 19px;
+	  }
+
+	  div.meta {
+	    position: absolute;
+	    bottom: 12px;
+	    font-size: 12px;
+	    line-height: 19px;
+	
+			div.author {
+		    font-weight: bold;
+		  }
+	  }
     
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
     &:hover {
       background-color: #212428;
       cursor: hand;
@@ -32,32 +63,10 @@ ul.articles {
       a, div.author {
         color: white;
       }
+
+			img {
+				display: none;
+			}
     }
-  }
-  
-  h1 {
-    font-size: 15px;
-    line-height: 22px;
-    
-    a {
-      font-weight: bold;
-    }
-  }
-  
-  div.body {
-    font-size: 13px;
-    line-height: 19px;
-  }
-  
-  div.meta {
-    position: absolute;
-    bottom: 12px;
-    font-size: 12px;
-    line-height: 19px;
-  }
-  
-  div.author {
-    font-weight: bold;
-/*  color: #212428;*/
   }
 }
