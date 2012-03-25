@@ -1,4 +1,4 @@
-Feature: Browse content
+Feature: Browse articles
   In order to be happy
   As an user
   I want to be able to easily browse content
