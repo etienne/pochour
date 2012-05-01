@@ -31,7 +31,8 @@ class ArticlesController < ApplicationController
   end
   
   def show
-    @article = Article.where(:id => params[:id], :draft => false).first
+    @article = Article.find(params[:id])
+    render_404 if @article.draft == true
     @title = "#{@article.title} par #{@article.user.name}"
   end
 end
