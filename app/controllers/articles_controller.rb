@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
   end
   
   def show
-    @article = Article.find(params[:id])
+    @article = Article.where(:id => params[:id], :draft => false)
     @title = "#{@article.title} par #{@article.user.name}"
   end
 end
